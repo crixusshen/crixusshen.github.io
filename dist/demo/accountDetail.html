@@ -1,0 +1,137 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta http-equiv="x-ua-compatible" content="ie=edge"> <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"> <title>东方证券股份有限公司</title> <meta name="description" content="东方证券股份有限公司"> <link rel="icon" type="images/x-icon" href="../favicon.ico"> <link rel="apple-touch-icon" href="../apple-touch-icon.png">  <style>body{
+            margin:0;
+            font-family:'Helvetica Neue',Helvetica,Arial,'Hiragino Sans GB','Microsoft Yahei',STXihei,SimHei,'WenQuanYi Micro Hei','Droid Sans’,sans-serif
+        }
+        .init-loading
+        {
+            position:fixed;
+            z-index:999;
+            width:100%;
+            height:100%;
+            display:table;
+            transition:opacity .3s ease
+        }
+        .init-loading i{
+            display:table-cell;
+            position:relative;
+            width:180px;
+            height:180px;
+            font-size:12px;
+            text-align:center;
+            vertical-align:middle;
+            color:rgba(255,20,63,.7);
+            background:#fff url("data:image/svg+xml;charset=utf8,%3Csvg width='180' height='180' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid' class='uil-ring'%3E%3Cpath fill='none' class='bk' d='M0 0h100v100H0z'/%3E%3Cdefs%3E%3Cfilter id='a' x='-100%' y='-100%' width='300%' height='300%'%3E%3CfeOffset result='offOut' in='SourceGraphic'/%3E%3CfeGaussianBlur result='blurOut' in='offOut'/%3E%3CfeBlend in='SourceGraphic' in2='blurOut'/%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M10 50s0 .5.1 1.4c0 .5.1 1 .2 1.7 0 .3.1.7.1 1.1.1.4.1.8.2 1.2.2.8.3 1.8.5 2.8.3 1 .6 2.1.9 3.2.3 1.1.9 2.3 1.4 3.5.5 1.2 1.2 2.4 1.8 3.7.3.6.8 1.2 1.2 1.9.4.6.8 1.3 1.3 1.9 1 1.2 1.9 2.6 3.1 3.7 2.2 2.5 5 4.7 7.9 6.7 3 2 6.5 3.4 10.1 4.6 3.6 1.1 7.5 1.5 11.2 1.6 4-.1 7.7-.6 11.3-1.6 3.6-1.2 7-2.6 10-4.6 3-2 5.8-4.2 7.9-6.7 1.2-1.2 2.1-2.5 3.1-3.7.5-.6.9-1.3 1.3-1.9.4-.6.8-1.3 1.2-1.9.6-1.3 1.3-2.5 1.8-3.7.5-1.2 1-2.4 1.4-3.5.3-1.1.6-2.2.9-3.2.2-1 .4-1.9.5-2.8.1-.4.1-.8.2-1.2 0-.4.1-.7.1-1.1.1-.7.1-1.2.2-1.7.1-.9.1-1.4.1-1.4V54.2c0 .4-.1.8-.1 1.2-.1.9-.2 1.8-.4 2.8-.2 1-.5 2.1-.7 3.3-.3 1.2-.8 2.4-1.2 3.7-.2.7-.5 1.3-.8 1.9-.3.7-.6 1.3-.9 2-.3.7-.7 1.3-1.1 2-.4.7-.7 1.4-1.2 2-1 1.3-1.9 2.7-3.1 4-2.2 2.7-5 5-8.1 7.1L70 85.7c-.8.5-1.7.9-2.6 1.3l-1.4.7-1.4.5c-.9.3-1.8.7-2.8 1C58 90.3 53.9 90.9 50 91l-3-.2c-1 0-2-.2-3-.3l-1.5-.2-.7-.1-.7-.2c-1-.3-1.9-.5-2.9-.7-.9-.3-1.9-.7-2.8-1l-1.4-.6-1.3-.6c-.9-.4-1.8-.8-2.6-1.3l-2.4-1.5c-3.1-2.1-5.9-4.5-8.1-7.1-1.2-1.2-2.1-2.7-3.1-4-.5-.6-.8-1.4-1.2-2-.4-.7-.8-1.3-1.1-2-.3-.7-.6-1.3-.9-2-.3-.7-.6-1.3-.8-1.9-.4-1.3-.9-2.5-1.2-3.7-.3-1.2-.5-2.3-.7-3.3-.2-1-.3-2-.4-2.8-.1-.4-.1-.8-.1-1.2v-1.1-1.7c-.1-1-.1-1.5-.1-1.5z' fill='%23ff123d' filter='url(%23a)'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 50 50' to='360 50 50' repeatCount='indefinite' dur='1s'/%3E%3C/path%3E%3C/svg%3E")center no-repeat;
+            -webkit-background-size:114px
+        }</style> </head> <body style="height: 100%;overflow: hidden">  <div class="init-loading page-loading"><i class="loading-progress">悦享投资之美</i></div> <div class="container"></div> <script type="text/html" id="page1"><div class="fragment">
+        <section>
+            <div class="ui-tab detailTab">
+                <ul class="ui-tab-nav detailTab__changeTab">
+                    <li class="current">日</li>
+                    <li>月</li>
+                </ul>
+                <ul class="ui-tab-content">
+                    <li class="current">
+                        <ul class="numberDetail ui-row ui-whitespace">
+                            <li class="ui-col ui-col-50 numberDetail__border">
+                                <h4>净资产（元）</h4>
+                                <h1 class="big-num">1000020.00</h1>
+                                <h5>资产合计</h5>
+                                <h5>1000.00</h5>
+                            </li>
+                            <li class="ui-col ui-col-50">
+                                <h4>维持担保比例</h4>
+                                <h1 class="big-num">1000010.00%</h1>
+                                <h5>负债合计</h5>
+                                <h5>1000.00</h5>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="numberDetail ui-row ui-whitespace">
+                            <li class="ui-col ui-col-50 numberDetail__border">
+                                <h4>净资产（元）</h4>
+                                <h1 class="big-num">2000020.00</h1>
+                                <h5>资产合计</h5>
+                                <h5>1000.00</h5>
+                            </li>
+                            <li class="ui-col ui-col-50">
+                                <h4>维持担保比例</h4>
+                                <h1 class="big-num">2000010.00%</h1>
+                                <h5>负债合计</h5>
+                                <h5>1000.00</h5>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="table-section ui-border-b">
+            <div class="table-section__header">
+                <span class="table-section__header__title">客户资产明细</span>
+                <span class="table-section__header__arrow table-section__header__arrow--fold"></span>
+            </div>
+            <div class="table-section__body">
+                <table class="responsive ui-table ui-border-tb">
+                    <thead>
+                    <tr>
+                        <th rowspan="2" class="first-header">证券名称</th>
+                        <th colspan="3" class="fixed">持有股数</th>
+                        <th rowspan="2">浮动盈亏</th>
+                        <th rowspan="2">浮动盈亏2</th>
+                        <th rowspan="2">浮动盈亏3</th>
+                    </tr>
+                    <tr>
+                        <th class="frozen fixed gray">冲抵保证金</th>
+                        <th class="fixed">融资买入</th>
+                        <th class="fixed stroke-right gray">当前库存</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>东方证券1</td>
+                        <td>11111</td>
+                        <td>22222</td>
+                        <td>33333</td>
+                        <td>+10000</td>
+                        <td>-10000</td>
+                        <td>-20000</td>
+                    </tr>
+                    <tr>
+                        <td>东方证券2</td>
+                        <td>11111</td>
+                        <td>22222</td>
+                        <td>33333</td>
+                        <td>+10000</td>
+                        <td>-10000</td>
+                        <td>-20000</td>
+                    </tr>
+                    <tr>
+                        <td>东方证券3</td>
+                        <td>11111</td>
+                        <td>22222</td>
+                        <td>33333</td>
+                        <td>+10000</td>
+                        <td>-10000</td>
+                        <td>-20000</td>
+                    </tr>
+                    <tr>
+                        <td>东方证券4</td>
+                        <td>11111</td>
+                        <td>22222</td>
+                        <td>33333</td>
+                        <td>+10000</td>
+                        <td>-10000</td>
+                        <td>-20000</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-section__footer">
+                <span class="table-section__footer__more">查看更多</span>
+            </div>
+        </section>
+        <section>
+            <div id="pieChart" style="width: 80%;height:300px;"></div>
+        </section>
+    </div></script> <script src="../scripts/orientsec-OBMobi-style.6e8f2309.js"></script> <script src="../scripts/orientsec-OBMobi.08cf8171.js"></script> <script src="../scripts/account/accountDetail.216a62cf.js"></script> <script src="../scripts/account/accountDetail-style.9099fecb.js"></script> </body> </html>
