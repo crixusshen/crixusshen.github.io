@@ -1,0 +1,1 @@
+require(["domReady","OBapi"],function(a,b){a(function(){function a(){this.init_page()}var b=require("fragment"),c=require("fragmentPage");require("scroller");a.prototype={init_page:function(){var a=c({name:"bindMain",url:"#",template:"#bindMain-script",init:function(a){},destory:function(a){}});b(".container").push(a).setDefault("bindMain").init()}},new a})});
