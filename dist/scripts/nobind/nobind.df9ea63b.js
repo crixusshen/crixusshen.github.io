@@ -1,0 +1,1 @@
+require(["domReady","OBapi"],function(a,b){a(function(){var a=$(".container").height(),b=$("#foot_content").height()+10,c=$("#bank_Step").height(),d=(a-b-c)/2;$("#bank_Step").css("margin-top",d+"px")})});
