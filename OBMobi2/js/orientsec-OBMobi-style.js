@@ -162,7 +162,7 @@ module.exports = function() {
 /***/ 22:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "font/obmobi.ttf";
+module.exports = __webpack_require__.p + "../font/obmobi.ttf";
 
 /***/ }),
 
