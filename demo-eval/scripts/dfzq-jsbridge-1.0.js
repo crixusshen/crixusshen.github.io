@@ -96,9 +96,56 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+/**
+ * Created by dfzq on 2017/4/13.
+ */
+/**
+ * 获取绝对路径
+ * @param url
+ */
+var getAbsoluteUrl = function getAbsoluteUrl(url) {
+    var link = document.createElement('a');
+    link.setAttribute('href', url);
+    var absoluteUrl = link.href;
+    link = null;
+    return absoluteUrl;
+};
+
+/**
+ * 属性继承
+ * @type {*}
+ * @private
+ */
+var _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+            // 源对象中是否存在对象键值
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+            }
+        }
+    }
+    return target;
+};
+
+exports.getAbsoluteUrl = getAbsoluteUrl;
+exports._extends = _extends;
+
+/***/ }),
+
+/***/ 1:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 exports.pageWillAppear = exports.onRequest = exports.onDynamicLink = exports.subscribeNotify = exports.onNotify = exports.onPushView = exports.onNavigationBar = exports.onRefresh = exports.onBack = exports.ready = undefined;
 
-var _util = __webpack_require__(1);
+var _util = __webpack_require__(0);
 
 // 区分设备系统
 var ua = navigator.userAgent; /**
@@ -322,53 +369,6 @@ exports.pageWillAppear = pageWillAppear;
 
 /***/ }),
 
-/***/ 1:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-/**
- * Created by dfzq on 2017/4/13.
- */
-/**
- * 获取绝对路径
- * @param url
- */
-var getAbsoluteUrl = function getAbsoluteUrl(url) {
-    var link = document.createElement('a');
-    link.setAttribute('href', url);
-    var absoluteUrl = link.href;
-    link = null;
-    return absoluteUrl;
-};
-
-/**
- * 属性继承
- * @type {*}
- * @private
- */
-var _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-            // 源对象中是否存在对象键值
-            if (Object.prototype.hasOwnProperty.call(source, key)) {
-                target[key] = source[key];
-            }
-        }
-    }
-    return target;
-};
-
-exports.getAbsoluteUrl = getAbsoluteUrl;
-exports._extends = _extends;
-
-/***/ }),
-
 /***/ 14:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -380,14 +380,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.onShare = exports.onLogin = exports.oauth = exports.ready = undefined;
 
-var _core = __webpack_require__(0);
+var _util = __webpack_require__(0);
 
-var isRegisterOk = false;
+var _core = __webpack_require__(1);
 
-// 空函数
 /**
  * Created by dfzq on 2017/8/17.
  */
+var isRegisterOk = false;
+
+// 空函数
 var noop = function noop() {};
 
 /**
@@ -457,9 +459,11 @@ var ready = function ready() {
  * @param callback 回调函数处理
  * @constructor
  */
-var oauth = function oauth() {
-    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { success: noop, fail: noop };
+var oauth = function oauth(options) {
 
+    // 默认值
+    var defaultOptions = { success: noop, fail: noop };
+    options = (0, _util._extends)({}, defaultOptions, options);
 
     if (isFromApp()) {
         // 首先建立js桥接模式
@@ -505,9 +509,11 @@ var oauth = function oauth() {
  * 打开原生登录视图
  * @param _
  */
-var onLogin = function onLogin() {
-    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { success: noop, fail: noop };
+var onLogin = function onLogin(options) {
 
+    // 默认值
+    var defaultOptions = { success: noop, fail: noop };
+    options = (0, _util._extends)({}, defaultOptions, options);
 
     if (isFromApp()) {
         (0, _core.onRequest)('2', '', options.success, options.fail);
@@ -525,8 +531,10 @@ var onLogin = function onLogin() {
  * @param link 跳转地址
  * @param ext 扩展字段
  */
-var onShare = function onShare() {
-    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+var onShare = function onShare(options) {
+
+    // 默认值
+    var defaultOptions = {
         channel: '1',
         title: '',
         description: '',
@@ -536,7 +544,7 @@ var onShare = function onShare() {
         success: noop,
         fail: noop
     };
-
+    options = (0, _util._extends)({}, defaultOptions, options);
 
     if (isFromApp()) {
         (0, _core.onRequest)('4', {
