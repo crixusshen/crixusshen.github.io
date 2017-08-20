@@ -420,8 +420,8 @@ var blankPage = function blankPage() {
     var message = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '请在东方赢家财富版客户端打开链接';
 
     var bHtml = document.createElement('div');
-    bHtml.style.cssText = 'display:table;';
-    bHtml.innerHTML = '<div style="display:table-cell;vertical-align: middle;">' + message + '</div>';
+    bHtml.style.cssText = 'display:table;position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background:white;z-index:99999;';
+    bHtml.innerHTML = '<div style="display:table-cell;vertical-align: middle;text-align: center;">' + message + '</div>';
 
     document.body.appendChild(bHtml);
 };
