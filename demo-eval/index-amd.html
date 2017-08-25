@@ -55,6 +55,22 @@
                 </div>
             </div>
 
+            <div class="page__bd">
+                <div class="weui-cells__title">导航</div>
+                <div class="weui-btn-area">
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label">url</label></div>
+                        <div class="weui-cell__bd">
+                            <input id="url" class="weui-input" type="text" placeholder="请输入http/https开头的Url">
+                        </div>
+                    </div>
+                    <a id="btn7" class="weui-btn weui-btn_primary" href="javascript:">点击跳转</a>
+                </div>
+                <div class="weui-btn-area">
+                    <a id="btn8" class="weui-btn weui-btn_primary" href="javascript:">返回</a>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -68,6 +84,17 @@
             </div>
         </div>
     </div>
+
+    <div id="dialog2" style="display: none;">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog">
+            <div class="weui-dialog__hd"><strong class="weui-dialog__title">提示</strong></div>
+            <div class="weui-dialog__bd">请输入正确的url</div>
+            <div class="weui-dialog__ft">
+                <a id="certain2" href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="./scripts/require.js"></script>
 <script>
@@ -78,6 +105,10 @@
 
     $('certain').addEventListener('click', function () {
         $('dialog').style.display = 'none'
+    })
+
+    $('certain2').addEventListener('click', function () {
+        $('dialog2').style.display = 'none'
     })
 
     // 是否来自于APP
@@ -206,6 +237,42 @@
                         description : '东方赢家财富版是一款综合类金融工具APP',
                         thumbImageUrl : 'http://wxs.dfzq.com.cn/fileRes/new_download/images/new_pic.jpg',
                         link : 'http://wxs.dfzq.com.cn/fileRes/new_download/app_open/appOpen.html',
+                    })
+                }
+            })
+
+            /**
+             * onNavigateTo跳转到某个页面
+             */
+            $('btn7').addEventListener('click', function () {
+                if (!isFromApp) {
+                    $('dialog').style.display = 'block'
+                }
+                else {
+                    var reg = /^((ht|f)tps?):\/\/[\w\-]+(\.[\w\-]+)+([\w\-\.,@?^=%&:\/~\+#]*[\w\-\@?^=%&\/~\+#])?$/;
+                    if (!reg.test($('url').value)){
+                        $('dialog2').style.display = 'block'
+                    } else {
+                        fastman.onNavigateTo({
+                            title : '测试页面',
+                            uri : $('url').value,
+                        })
+                    }
+                }
+            })
+
+            /**
+             * onNavigateBack返回到上一个页面
+             */
+            $('btn8').addEventListener('click', function () {
+                if (!isFromApp) {
+                    $('dialog').style.display = 'block'
+                }
+                else {
+                    fastman.onNavigateBack({
+                        success : function () {
+                            alert('返回成功')
+                        },
                     })
                 }
             })
