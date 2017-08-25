@@ -378,7 +378,7 @@ exports.pageWillAppear = pageWillAppear;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.onShare = exports.onLogin = exports.oauth = exports.ready = undefined;
+exports.onNavigateBack = exports.onNavigateTo = exports.onShare = exports.onLogin = exports.oauth = exports.ready = undefined;
 
 var _util = __webpack_require__(0);
 
@@ -560,10 +560,47 @@ var onShare = function onShare(options) {
     }
 };
 
+/**
+ * 保留当前页面，跳转到应用内的某个页面，使用onNavigateBack可以返回到原页面。
+ * @param _
+ */
+var onNavigateTo = function onNavigateTo(options) {
+
+    // 默认值
+    var defaultOptions = { title: '', uri: '', success: noop, fail: noop };
+    options = (0, _util._extends)({}, defaultOptions, options);
+
+    if (isFromApp()) {
+        (0, _core.onPushView)(options);
+    } else {
+        blankPage();
+    }
+};
+
+/**
+ * 关闭当前页面，返回上一页面或多级页面。
+ * @param _
+ */
+var onNavigateBack = function onNavigateBack(options) {
+
+    // 默认值
+    var defaultOptions = { title: '', uri: '', success: noop, fail: noop };
+    options = (0, _util._extends)({}, defaultOptions, options);
+
+    if (isFromApp()) {
+        options.complete = options.success;
+        (0, _core.onBack)(options);
+    } else {
+        blankPage();
+    }
+};
+
 exports.ready = ready;
 exports.oauth = oauth;
 exports.onLogin = onLogin;
 exports.onShare = onShare;
+exports.onNavigateTo = onNavigateTo;
+exports.onNavigateBack = onNavigateBack;
 
 /***/ })
 
