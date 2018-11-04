@@ -1,0 +1,48 @@
+@startuml
+
+storage 前端 {
+  node 小程序1
+  node 小程序2
+  node 小程序3
+  node 小程序4
+}
+storage 后端 {
+  node 后台管理系统1
+  node 后台管理系统2
+}
+node 小服务Application1
+node 小服务Application2
+node 小服务Application3
+cloud 企业级内部-NPM私库1 {
+  node 小服务Framework1
+  node 小服务Framework2
+  node 小服务Framework3
+}
+cloud 企业级内部-NPM私库2 {
+  node 小服务Plugin1
+  node 小服务Plugin2
+  node 小服务Plugin3
+  node 小服务Plugin4
+}
+
+小程序1 -- 小服务Application1
+小程序1 -- 小服务Application2
+小程序2 -- 小服务Application2
+小程序3 -- 小服务Application3
+小程序4 -- 小服务Application3
+后台管理系统1 -- 小服务Application3
+后台管理系统2 -- 小服务Application3
+小服务Application1 .. 小服务Framework1
+小服务Application2 .. 小服务Framework2
+小服务Application3 .. 小服务Framework3
+小服务Framework1 ~~ 小服务Plugin1
+小服务Framework1 ~~ 小服务Plugin2
+小服务Framework1 ~~ 小服务Plugin3
+小服务Framework1 ~~ 小服务Plugin4
+小服务Framework2 ~~ 小服务Plugin1
+小服务Framework2 ~~ 小服务Plugin2
+小服务Framework3 ~~ 小服务Plugin1
+小服务Framework3 ~~ 小服务Plugin2
+小服务Framework3 ~~ 小服务Plugin3
+
+@enduml

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>起点 · Fastman2-MiddleGround</title>
+        <title>起点 · 小服务</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -115,6 +115,32 @@
             
                     
                     更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="commons/config.html">
+            
+                <a href="commons/config.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="commons/multi-env.html">
+            
+                <a href="commons/multi-env.html">
+            
+                    
+                    多环境
             
                 </a>
             
@@ -258,12 +284,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.10" data-path="basic/config.html">
+        <li class="chapter " data-level="1.2.10" data-path="basic/logs.html">
             
-                <a href="basic/config.html">
+                <a href="basic/logs.html">
             
                     
-                    配置
+                    日志
             
                 </a>
             
@@ -290,12 +316,38 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="advance/redis-cluster.html">
+        <li class="chapter " data-level="1.3.1" data-path="advance/ipc.html">
+            
+                <a href="advance/ipc.html">
+            
+                    
+                    进程间通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="advance/redis-cluster.html">
             
                 <a href="advance/redis-cluster.html">
             
                     
                     redis集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="advance/middleware.html">
+            
+                <a href="advance/middleware.html">
+            
+                    
+                    中间件
             
                 </a>
             
@@ -353,12 +405,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x1F31F;-&#x5C0F;&#x670D;&#x52A1;---pluggable-enterprise-micro-service-framework-&#x1F31F;">&#x1F31F; &#x5C0F;&#x670D;&#x52A1; - Pluggable Enterprise Micro Service Framework &#x1F31F;</h1>
-<p>&#x5F53;&#x524D;&#x7248;&#x672C;&#xFF1A;<a href="CHANGELOG.html">v0.3.0</a></p>
+                                <h1 id="&#x1F31F;-&#x5C0F;&#x670D;&#x52A1;---&#x4E2D;&#x540E;&#x7AEF;&#x4E00;&#x4F53;&#x5316;&#x5F00;&#x53D1;&#x5B9E;&#x8DF5;&#x89E3;&#x51B3;&#x65B9;&#x6848;-&#x1F31F;">&#x1F31F; &#x5C0F;&#x670D;&#x52A1; - &#x4E2D;&#x540E;&#x7AEF;&#x4E00;&#x4F53;&#x5316;&#x5F00;&#x53D1;&#x5B9E;&#x8DF5;&#x89E3;&#x51B3;&#x65B9;&#x6848; &#x1F31F;</h1>
+<p>&#x5F53;&#x524D;&#x7248;&#x672C;&#xFF1A;<a href="CHANGELOG.html">v0.5.0</a></p>
 <blockquote>
-<p>&#x4F01;&#x4E1A;&#x7EA7;&#x5E94;&#x7528;&#x5728;&#x8FFD;&#x6C42;&#x89C4;&#x8303;&#x548C;&#x5171;&#x5EFA;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x8003;&#x8651;&#x5982;&#x4F55;&#x5E73;&#x8861;&#x4E0D;&#x540C;&#x56E2;&#x961F;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x6027;&#xFF0C;&#x6C42;&#x540C;&#x5B58;&#x5F02;&#x3002;&#x76EE;&#x524D;&#x4F01;&#x4E1A;&#x7EA7;&#x65E0;&#x8BBA;&#x662F;&#x5E95;&#x5C42;&#x5E94;&#x7528;&#x8FD8;&#x662F;&#x4E0A;&#x5C42;&#x5E94;&#x7528;&#x5B58;&#x5728;&#x975E;&#x5E38;&#x4E25;&#x91CD;&#x7684;&#x5DEE;&#x5F02;&#x6027;&#xFF0C;&#x6280;&#x672F;&#x8BED;&#x8A00;&#x7684;&#x5B9E;&#x73B0;&#x4E0D;&#x7EDF;&#x4E00;&#xFF0C;&#x7F3A;&#x5C11;&#x5168;&#x5C40;&#x548C;&#x7EDF;&#x4E00;&#x7684;&#x67B6;&#x6784;&#x89C4;&#x8303;&#xFF0C;&#x800C;&#x673A;&#x7F18;&#x5DE7;&#x5408;&#xFF0C;&#x201D;&#x5C0F;&#x670D;&#x52A1;&#x201C;&#x4E5F;&#x662F;&#x57FA;&#x4E8E;&#x201D;&#x5C0F;&#x7A0B;&#x5E8F;&#x201C;&#x7684;&#x7279;&#x6B8A;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x800C;&#x56E0;&#x5B55;&#x800C;&#x751F;&#x3002;&#x6211;&#x53D1;&#x73B0;&#x662F;&#x5426;&#x5E94;&#x8BE5;&#x63D0;&#x4F9B;&#x5E76;&#x5F00;&#x53D1;&#x4E00;&#x5957;&#x7075;&#x6D3B;&#x800C;&#x53C8;&#x5177;&#x6709;&#x53EF;&#x6269;&#x5C55;&#x7684;&#x63D2;&#x4EF6;&#x673A;&#x5236;&#x6846;&#x67B6;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x66F4;&#x5BB9;&#x6613;&#x7684;&#x57FA;&#x4E8E;&#x81EA;&#x8EAB;&#x7684;&#x6280;&#x672F;&#x67B6;&#x6784;&#x5728;&#x5C0F;&#x670D;&#x52A1;&#x57FA;&#x7840;&#x4E0A;&#x6269;&#x5C55;&#x51FA;&#x9002;&#x5408;&#x81EA;&#x8EAB;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x7684;&#x6846;&#x67B6;&#x3002;   </p>
+<p>&#x4F01;&#x4E1A;&#x7EA7;&#x5E94;&#x7528;&#x5728;&#x8FFD;&#x6C42;&#x89C4;&#x8303;&#x548C;&#x5171;&#x5EFA;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x8003;&#x8651;&#x5982;&#x4F55;&#x5E73;&#x8861;&#x4E0D;&#x540C;&#x56E2;&#x961F;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x6027;&#xFF0C;&#x6C42;&#x540C;&#x5B58;&#x5F02;&#x3002;&#x76EE;&#x524D;&#x4F01;&#x4E1A;&#x7EA7;&#x65E0;&#x8BBA;&#x662F;&#x5E95;&#x5C42;&#x5E94;&#x7528;&#x8FD8;&#x662F;&#x4E0A;&#x5C42;&#x5E94;&#x7528;&#x5B58;&#x5728;&#x975E;&#x5E38;&#x4E25;&#x91CD;&#x7684;&#x5DEE;&#x5F02;&#x6027;&#xFF0C;&#x6280;&#x672F;&#x8BED;&#x8A00;&#x7684;&#x5B9E;&#x73B0;&#x4E0D;&#x7EDF;&#x4E00;&#xFF0C;&#x7F3A;&#x5C11;&#x5168;&#x5C40;&#x548C;&#x7EDF;&#x4E00;&#x7684;&#x67B6;&#x6784;&#x89C4;&#x8303;&#xFF0C;&#x800C;&#x673A;&#x7F18;&#x5DE7;&#x5408;&#xFF0C;&#x201C;&#x5C0F;&#x670D;&#x52A1;&#x201D;&#x4E5F;&#x662F;&#x57FA;&#x4E8E;&#x201C;&#x5C0F;&#x7A0B;&#x5E8F;&#x201D;&#x7684;&#x201C;&#x5C0F;&#x7A0B;&#x5E8F;&#x53D1;&#x5E03;&#x5E73;&#x53F0;&#x201D;&#x800C;&#x51FA;&#x73B0;&#x4E86;&#x6784;&#x5EFA;&#x7684;&#x60F3;&#x6CD5;&#xFF0C;&#x5F53;&#x65F6;&#x56E2;&#x961F;&#x5185;&#x90E8;&#x5C31;&#x5728;&#x7EA0;&#x7ED3;&#x9009;&#x62E9;&#x54EA;&#x6761;&#x6280;&#x672F;&#x8DEF;&#x7EBF;&#x6765;&#x6784;&#x5EFA;&#x8BE5;&#x5E73;&#x53F0;&#xFF0C;&#x7531;&#x4E8E;&#x56E2;&#x961F;&#x89C4;&#x6A21;&#x5E76;&#x4E0D;&#x5927;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x4F01;&#x4E1A;&#x5185;&#x90E8;&#x5C65;&#x884C;&#x7684;&#x804C;&#x8D23;&#x5374;&#x975E;&#x5E38;&#x5E7F;&#xFF0C;&#x56E0;&#x6B64;&#x662F;&#x5426;&#x6709;&#x4E00;&#x79CD;&#x524D;&#x4E2D;&#x540E;&#x7AEF;&#x4E00;&#x4F53;&#x5316;&#x7684;&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x6765;&#x9002;&#x5E94;&#x6211;&#x4EEC;&#x56E2;&#x961F;&#x7684;&#x53D1;&#x5C55;&#xFF1F;&#x662F;&#x5426;&#x5E94;&#x8BE5;&#x63D0;&#x4F9B;&#x5E76;&#x5F00;&#x53D1;&#x4E00;&#x5957;&#x7075;&#x6D3B;&#x800C;&#x53C8;&#x5177;&#x6709;&#x53EF;&#x6269;&#x5C55;&#x7684;&#x57FA;&#x4E8E;&#x63D2;&#x4EF6;&#x673A;&#x5236;&#x7684;&#x6846;&#x67B6;&#xFF1F;&#x53EF;&#x4EE5;&#x8BA9;&#x6211;&#x4EEC;&#x66F4;&#x5BB9;&#x6613;&#x7684;&#x57FA;&#x4E8E;&#x81EA;&#x8EAB;&#x7684;&#x6280;&#x672F;&#x67B6;&#x6784;&#x5728;&#x5C0F;&#x670D;&#x52A1;&#x57FA;&#x7840;&#x4E0A;&#x6269;&#x5C55;&#x51FA;&#x9002;&#x5408;&#x81EA;&#x8EAB;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x7684;&#x6846;&#x67B6;&#x3002;      </p>
 </blockquote>
-<p>&#x5728;&#x5C0F;&#x670D;&#x52A1;&#x4E2D;&#x300C;&#x63D2;&#x4EF6;&#x673A;&#x5236;&#x300D;&#x662F;&#x6838;&#x5FC3;&#xFF0C;&#x4F8B;&#x5982;&#x8981;&#x5B9E;&#x73B0;&#x7C7B;ORM&#xFF0C;WebSocket&#x7B49;&#x529F;&#x80FD;&#xFF0C;&#x6211;&#x4E0D;&#x5E94;&#x8BE5;&#x57FA;&#x4E8E;&#x6846;&#x67B6;&#x672C;&#x8EAB;&#x53BB;&#x5B9E;&#x73B0;&#x8FD9;&#x4E9B;&#x529F;&#x80FD;&#xFF0C;&#x800C;&#x5E94;&#x8BE5;&#x4EE5;&#x96C6;&#x6210;&#x5404;&#x79CD;&#x529F;&#x80FD;&#x63D2;&#x4EF6;&#x4E3A;&#x76EE;&#x6807;&#x53BB;&#x5B9E;&#x73B0;&#x6846;&#x67B6;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x4F1A;&#x5C40;&#x9650;&#x56E2;&#x961F;&#x67B6;&#x6784;&#x5E08;&#x548C;&#x6280;&#x672F;&#x8D1F;&#x8D23;&#x4EBA;&#x7684;&#x6280;&#x672F;&#x9009;&#x578B;&#x3002;&#x901A;&#x8FC7;&#x96C6;&#x6210;&#x5404;&#x79CD;&#x529F;&#x80FD;&#x63D2;&#x4EF6;&#x6765;&#x4EE3;&#x66FF;&#x529F;&#x80FD;&#x8FD9;&#x662F;&#x5C0F;&#x670D;&#x52A1;&#x51FA;&#x73B0;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x4E5F;&#x662F;&#x8BBE;&#x8BA1;&#x8FD9;&#x4E2A;&#x6846;&#x67B6;&#x7684;&#x521D;&#x8877;&#x3002;   </p>
+<p>&#x5728;&#x5C0F;&#x670D;&#x52A1;&#x4E2D;&#x300C;&#x63D2;&#x4EF6;&#x673A;&#x5236;&#x300D;&#x662F;&#x6838;&#x5FC3;&#xFF0C;&#x4F8B;&#x5982;&#x8981;&#x5B9E;&#x73B0;ORM&#xFF0C;WebSocket&#xFF0C;TCP&#x7B49;&#x529F;&#x80FD;&#xFF0C;&#x6211;&#x5C31;&#x5728;&#x8003;&#x8651;&#x4E0D;&#x5E94;&#x57FA;&#x4E8E;&#x6846;&#x67B6;&#x672C;&#x8EAB;&#x53BB;&#x5B9E;&#x73B0;&#x8FD9;&#x4E9B;&#x529F;&#x80FD;&#xFF0C;&#x800C;&#x5E94;&#x8BE5;&#x4EE5;&#x96C6;&#x6210;&#x5404;&#x79CD;&#x529F;&#x80FD;&#x63D2;&#x4EF6;&#x4E3A;&#x76EE;&#x6807;&#x53BB;&#x5B9E;&#x73B0;&#x6846;&#x67B6;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x4F1A;&#x5C40;&#x9650;&#x56E2;&#x961F;&#x67B6;&#x6784;&#x5E08;&#x548C;&#x6280;&#x672F;&#x8D1F;&#x8D23;&#x4EBA;&#x7684;&#x6280;&#x672F;&#x9009;&#x578B;&#x3002;&#x901A;&#x8FC7;&#x96C6;&#x6210;&#x5404;&#x79CD;&#x529F;&#x80FD;&#x63D2;&#x4EF6;&#x6765;&#x4EE3;&#x66FF;&#x529F;&#x80FD;&#x8FD9;&#x662F;&#x5C0F;&#x670D;&#x52A1;&#x51FA;&#x73B0;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x4E5F;&#x662F;&#x8BBE;&#x8BA1;&#x8FD9;&#x4E2A;&#x6846;&#x67B6;&#x7684;&#x521D;&#x8877;&#x3002;     </p>
+<h3 id="&#x76EE;&#x6807;">&#x76EE;&#x6807;</h3>
+<p>&#x6211;&#x59CB;&#x7EC8;&#x575A;&#x4FE1;&#x901A;&#x8FC7;&#x5C0F;&#x670D;&#x52A1;&#x548C;<a href="http://itest.dfzq.com.cn/document/fastman2/" target="_blank">&#x5C0F;&#x7A0B;&#x5E8F;</a>&#x7684;&#x76F8;&#x4E92;&#x534F;&#x4F5C;&#xFF0C;&#x524D;&#x4E2D;&#x540E;&#x7AEF;&#x7684;&#x4E00;&#x4F53;&#x5316;&#x5F00;&#x53D1;&#x5B9E;&#x8DF5;&#x5C06;&#x6210;&#x4E3A;&#x53EF;&#x80FD;&#xFF0C;&#x540C;&#x65F6;&#x63A8;&#x8FDB;&#x524D;&#x7AEF;&#x5411;&#x5927;&#x524D;&#x7AEF;&#x65B9;&#x5411;&#x7684;&#x8FC5;&#x901F;&#x8FC8;&#x8FDB;&#xFF0C;&#x901A;&#x8FC7;&#x4E0D;&#x65AD;&#x7684;&#x5B9E;&#x8DF5;&#x5C06;&#x53EF;&#x4EE5;&#x8BC1;&#x660E;&#x4E00;&#x4F53;&#x5316;&#x5F00;&#x53D1;&#x5BF9;&#x4E8E;&#x4F01;&#x4E1A;&#x63D0;&#x5347;&#x6548;&#x7387;&#x548C;&#x6280;&#x672F;&#x67B6;&#x6784;&#x7684;&#x7EDF;&#x4E00;&#x6709;&#x7740;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x7684;&#x5B9E;&#x9645;&#x610F;&#x4E49;&#x3002;     </p>
+<h3 id="&#x7CFB;&#x7EDF;&#x67B6;&#x6784;&#x6700;&#x7EC8;&#x84DD;&#x56FE;">&#x7CFB;&#x7EDF;&#x67B6;&#x6784;&#x6700;&#x7EC8;&#x84DD;&#x56FE;</h3>
+<image src="./diagrams/out/architecture_overview/architecture_overview.png">
+
+<p><br></p>
+<p>&#x5B98;&#x5BA3;&#xFF1A;&#x540E;&#x53F0;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x5B8C;&#x5168;&#x57FA;&#x4E8E;&#x5C0F;&#x7A0B;&#x5E8F;&#x6846;&#x67B6;&#x7684;&#x5206;&#x5C42;&#x7ED3;&#x6784;&#x548C;&#x5F00;&#x53D1;API&#xFF0C;&#x56E0;&#x6B64;&#x540E;&#x53F0;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x5F00;&#x53D1;&#x9488;&#x5BF9;&#x5F00;&#x53D1;&#x8005;&#x800C;&#x8A00;&#x53EA;&#x9700;&#x9605;&#x8BFB;<a href="http://itest.dfzq.com.cn/document/fastman2/schema/logic/" target="_blank">&#x5C0F;&#x7A0B;&#x5E8F;-&#x903B;&#x8F91;&#x5C42;</a>&#x8FD9;&#x4E00;&#x7AE0;&#x8282;&#x5185;&#x5BB9;&#x5373;&#x53EF;&#x3002;&#x800C;&#x540E;&#x53F0;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;UI&#x6846;&#x67B6;&#x6211;&#x4EEC;&#x5219;&#x6CA1;&#x6709;&#x91CD;&#x65B0;&#x9020;&#x8F6E;&#x5B50;&#xFF0C;&#x57FA;&#x4E8E;&#x963F;&#x91CC;&#x5DF4;&#x5DF4;&#x7684;<a href="https://ant.design/" target="_blank">Ant-Design</a>&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x8FD9;&#x91CC;&#x8FD8;&#x8981;&#x63D0;&#x4E00;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x8FD8;&#x4E0D;&#x4E86;&#x89E3;<a href="http://itest.dfzq.com.cn/document/fastman2/" target="_blank">&#x5C0F;&#x7A0B;&#x5E8F;&#x662F;&#x4EC0;&#x4E48;</a>&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x9605;&#x8BFB;&#x4E0B;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x5B98;&#x65B9;API&#x6587;&#x6863;&#xFF0C;&#x5C0F;&#x7A0B;&#x5E8F;&#x662F;&#x4E00;&#x5957;&#x524D;&#x7AEF;&#x4E00;&#x4F53;&#x5316;&#x5F00;&#x53D1;&#x5B9E;&#x8DF5;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x4E00;&#x5957;&#x4EE3;&#x7801;&#x53EF;&#x5206;&#x522B;&#x7F16;&#x8BD1;&#x51FA;IOS&#x3001;Android&#x548C;H5&#x7684;&#x6E10;&#x8FDB;&#x5F0F;&#x8DE8;&#x5E73;&#x53F0;&#x79FB;&#x52A8;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#xFF0C;&#x4E0B;&#x4E2A;&#x7248;&#x672C;&#x6211;&#x4EEC;&#x8FD8;&#x4F1A;&#x652F;&#x6301;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#xFF0C;&#x656C;&#x8BF7;&#x671F;&#x5F85;&#x3002;    </p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x4E00;&#x4F53;&#x5316;&#x7684;&#x5EFA;&#x8BBE;&#x4E0D;&#x5B8C;&#x5168;&#x96C6;&#x4E2D;&#x4E8E;&#x4E2D;&#x540E;&#x7AEF;&#xFF0C;&#x524D;&#x7AEF;&#x540C;&#x6837;&#x5B58;&#x5728;&#x4E09;&#x8DB3;&#x9F0E;&#x7ACB;&#xFF08;IOS/Android/Web&#xFF09;&#x7684;&#x6001;&#x52BF;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x66F4;&#x7EC6;&#x5316;&#x5230;&#x5E73;&#x53F0;&#xFF0C;&#x8FD8;&#x5B58;&#x5728;&#x5FAE;&#x4FE1;&#x7B49;&#x7B2C;&#x4E09;&#x65B9;&#x6D41;&#x91CF;&#x5165;&#x53E3;&#xFF0C;&#x901A;&#x8FC7;<a href="http://itest.dfzq.com.cn/document/fastman2/" target="_blank">&#x5C0F;&#x7A0B;&#x5E8F;</a>&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E86;&#x524D;&#x7AEF;&#x4E00;&#x4F53;&#x5316;&#x7684;&#x65B9;&#x6848;&#x6574;&#x5408;&#xFF0C;&#x5F53;&#x7136;&#x4E3A;&#x4E86;&#x6253;&#x901A;&#x540E;&#x7AEF;&#xFF0C;&#x5728;&#x540E;&#x7AEF;&#x7684;&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x57FA;&#x7840;&#x4E0A;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x590D;&#x7528;&#x4E86;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;API&#xFF0C;&#x4ECE;&#x800C;&#x5E2E;&#x52A9;&#x548C;&#x5B8C;&#x5584;&#x5F00;&#x53D1;&#x8005;&#x5B66;&#x4E60;&#x4E00;&#x5904;&#x5E76;&#x7528;&#x4E8E;&#x591A;&#x5904;&#xFF0C;&#x6781;&#x5927;&#x7684;&#x63D0;&#x5347;&#x4E86;&#x5F00;&#x53D1;&#x6548;&#x7387;&#xFF0C;&#x540C;&#x65F6;&#x771F;&#x6B63;&#x610F;&#x4E49;&#x4E0A;&#x505A;&#x5230;&#x4E86;&#x524D;&#x4E2D;&#x540E;&#x7AEF;&#x4E00;&#x4F53;&#x5316;&#x5B9E;&#x8DF5;&#x3002;             </p>
 <h3 id="&#x7279;&#x6027;">&#x7279;&#x6027;</h3>
 <ul>
 <li>&#x63D0;&#x4F9B;&#x57FA;&#x4E8E;&#x5C0F;&#x670D;&#x52A1;&#x7684;&#x4E0A;&#x5C42;&#x6846;&#x67B6;&#x80FD;&#x529B;</li>
@@ -366,7 +426,7 @@
 <li>&#x5185;&#x7F6E;&#x591A;&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#xFF0C;&#x652F;&#x6301;IPC   </li>
 <li>&#x6E10;&#x8FDB;&#x5F0F;&#x5F00;&#x53D1;</li>
 </ul>
-
+</image>
                                 
                                 </section>
                             
@@ -399,7 +459,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"起点","level":"1.1","depth":1,"next":{"title":"更新日志","level":"1.1.1","depth":2,"path":"CHANGELOG.md","ref":"CHANGELOG.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","theme-api","prism","-highlight","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-api":{"languages":[],"split":true,"theme":"light"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"sourceCodeUrl":"xxxxx"},"discription":"orientsec 小服务 Design","title":"Fastman2-MiddleGround","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*"},"file":{"path":"README.md","mtime":"2018-10-31T03:40:52.834Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-11-03T00:21:22.095Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"起点","level":"1.1","depth":1,"next":{"title":"更新日志","level":"1.1.1","depth":2,"path":"CHANGELOG.md","ref":"CHANGELOG.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","theme-api","prism","-highlight","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-api":{"languages":[],"split":true,"theme":"light"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"sourceCodeUrl":"xxxxx"},"discription":"orientsec 小服务 Design","title":"小服务","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"weibo":false,"all":null}},"gitbook":"*"},"file":{"path":"README.md","mtime":"2018-11-04T02:21:17.705Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-11-04T12:42:49.083Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
