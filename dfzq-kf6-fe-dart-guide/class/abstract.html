@@ -1,0 +1,504 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>抽象类与抽象方法 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../type/" />
+    
+    
+    <link rel="prev" href="super-class.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    教程简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="accessor.html">
+            
+                <a href="accessor.html">
+            
+                    
+                    存取器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="instance-variable.html">
+            
+                <a href="instance-variable.html">
+            
+                    
+                    实例变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="class-variable.html">
+            
+                <a href="class-variable.html">
+            
+                    
+                    类变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="final-variable.html">
+            
+                <a href="final-variable.html">
+            
+                    
+                    final变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="equal.html">
+            
+                <a href="equal.html">
+            
+                    
+                    相等操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="super-class.html">
+            
+                <a href="super-class.html">
+            
+                    
+                    父类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="abstract.html">
+            
+                <a href="abstract.html">
+            
+                    
+                    抽象类与抽象方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../type/">
+            
+                <a href="../type/">
+            
+                    
+                    类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../type/optional-type.html">
+            
+                <a href="../type/optional-type.html">
+            
+                    
+                    可选类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../type/function-type.html">
+            
+                <a href="../type/function-type.html">
+            
+                    
+                    函数类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../type/interface-type.html">
+            
+                <a href="../type/interface-type.html">
+            
+                    
+                    接口类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >抽象类与抽象方法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x62BD;&#x8C61;&#x7C7B;&#x4E0E;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;">&#x62BD;&#x8C61;&#x7C7B;&#x4E0E;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;</h1>
+<p>&#x901A;&#x5E38;&#x6765;&#x8BF4;&#xFF0C;&#x7B80;&#x5355;&#x7684;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x800C;&#x4E0D;&#x63D0;&#x4F9B;&#x5B83;&#x7684;&#x5B9E;&#x73B0;&#x662F;&#x6709;&#x610F;&#x4E49;&#x7684;&#xFF0C;&#x5728;&#x67D0;&#x4E9B;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x7684;&#x5C01;&#x88C5;&#x4E2D;&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x975E;&#x5E38;&#x5E38;&#x89C1;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x88AB;&#x79F0;&#x4E3A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x3002;&#x4EFB;&#x4F55;&#x79CD;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x90FD;&#x53EF;&#x4EE5;&#x88AB;&#x62BD;&#x8C61;&#x5316;&#xFF0C;&#x4E0D;&#x7BA1;&#x5B83;&#x662F;getter&#x3001;setter&#x3001;&#x64CD;&#x4F5C;&#x7B26;&#x6216;&#x666E;&#x901A;&#x65B9;&#x6CD5;&#x3002;    </p>
+<p>&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x5C06;&#x544A;&#x8BC9;&#x4EE3;&#x7801;&#x7684;&#x9605;&#x8BFB;&#x8005;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x53EA;&#x5728;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x65F6;&#x624D;&#x53EF;&#x7528;&#x3002;&#x6709;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x7684;&#x7C7B;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;&#xFF0C;&#x62BD;&#x8C61;&#x7C7B;&#x7684;&#x58F0;&#x660E;&#x662F;&#x901A;&#x8FC7;&#x5728;&#x7C7B;&#x540D;&#x524D;&#x52A0;&#x4E0A;&#x524D;&#x7F00;<code>abstract</code>&#x3002;    </p>
+<p>&#x62BD;&#x8C61;&#x7C7B;&#x4F5C;&#x4E3A;&#x5176;&#x5B83;&#x5B50;&#x7C7B;&#xFF08;&#x6216;&#x79F0;&#x4E3A;&#x6D3E;&#x751F;&#x7C7B;&#xFF09;&#x7684;&#x7236;&#x7C7B;&#xFF08;&#x6216;&#x79F0;&#x4E3A;&#x57FA;&#x7C7B;&#xFF09;&#x4F7F;&#x7528;&#x3002;&#x5B83;&#x4E0D;&#x80FD;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x6BD5;&#x7ADF;&#x5B83;&#x7F3A;&#x5931;&#x90E8;&#x5206;&#x5B9E;&#x73B0;&#xFF0C;&#x5BF9;&#x5B83;&#x8FDB;&#x884C;&#x5B9E;&#x4F8B;&#x5316;&#x4F1A;&#x5BFC;&#x81F4;&#x8FD0;&#x884C;&#x65F6;&#x9519;&#x8BEF;&#xFF0C;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;<code>AbstractClassInstantiationError</code>&#x7684;&#x9519;&#x8BEF;&#x3002;&#x4E0D;&#x540C;&#x4E8E;&#x63A5;&#x53E3;&#xFF0C;&#x62BD;&#x8C61;&#x7C7B;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x6210;&#x5458;&#x7684;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x3002;   </p>
+<sec data-title="Dart" data-id="section1" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section1"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section1"><div class="panel-body">
+<pre><code class="lang-dart"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Department</span> </span>{
+  <span class="hljs-keyword">final</span> name;
+  Department(<span class="hljs-keyword">this</span>.name) {
+
+  }
+
+  printName() {
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&apos;Department name: <span class="hljs-subst">${<span class="hljs-keyword">this</span>.name}</span>&apos;</span>);
+  }
+
+  printMeeting();
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AccountingDepartment</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Department</span> </span>{
+  AccountingDepartment(): <span class="hljs-keyword">super</span>(<span class="hljs-string">&apos;Accounting and Auditing&apos;</span>) {
+
+  }
+
+  <span class="hljs-comment">// @override&#x6CE8;&#x89E3;&#x662F;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x662F;&#x52A0;&#x4E0A;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x8BA9;&#x9605;&#x8BFB;&#x8005;&#x66F4;&#x52A0;&#x8BED;&#x4E49;&#x5316;&#x7684;&#x7406;&#x89E3;</span>
+  <span class="hljs-meta">@override</span>
+  printMeeting() {
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&apos;Generating accounting reports...&apos;</span>);
+  }
+
+  generateReport() {
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&apos;Generating accounting reports...&apos;</span>);
+  }
+}
+
+main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">String</span>&gt; args) {
+  Department department;  <span class="hljs-comment">// &#x5141;&#x8BB8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;&#x578B;&#x7684;&#x5F15;&#x7528;</span>
+  <span class="hljs-comment">// department = new Department();  // &#x9519;&#x8BEF;&#xFF1A;&#x4E0D;&#x80FD;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;</span>
+  department = <span class="hljs-keyword">new</span> AccountingDepartment();  <span class="hljs-comment">// &#x5141;&#x8BB8;&#x5BF9;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x5B50;&#x7C7B;&#x8FDB;&#x884C;&#x5B9E;&#x4F8B;&#x5316;&#x548C;&#x5F15;&#x7528;&#x8D4B;&#x503C;</span>
+  department.printName();
+  department.printMeeting();
+  <span class="hljs-comment">// department.generateReport();  // &#x9519;&#x8BEF;: &#x65B9;&#x6CD5;&#x5728;&#x58F0;&#x660E;&#x7684;&#x62BD;&#x8C61;&#x7C7B;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;</span>
+}
+</code></pre>
+</div></div></div></sec>
+<sec data-title="TypeScript" data-id="section2" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section2"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section2"><div class="panel-body">
+<pre><code class="lang-javascript">abstract <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Department</span> </span>{
+  readonly name
+  <span class="hljs-keyword">constructor</span>(public _name: string) {
+    <span class="hljs-keyword">this</span>.name = _name
+  }
+
+  public printName() {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Department name: <span class="hljs-subst">${this.name}</span>`</span>);
+  }
+
+  <span class="hljs-comment">// &#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x4F5C;&#x4E3A;&#x534F;&#x8BAE;&#xFF0C;&#x6700;&#x597D;&#x4E5F;&#x5B9A;&#x4E49;&#x597D;&#x4F60;&#x7684;&#x9884;&#x671F;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;</span>
+  public abstract printMeeting(): <span class="hljs-keyword">void</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AccountingDepartment</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Department</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">super</span>(<span class="hljs-string">&apos;Accounting and Auditing&apos;</span>)  <span class="hljs-comment">// &#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x5FC5;&#x987B;&#x8C03;&#x7528; super()</span>
+  }
+
+  public printMeeting(): <span class="hljs-keyword">void</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Generating accounting reports...&apos;</span>);
+  }
+}
+
+<span class="hljs-keyword">let</span> department: Department; <span class="hljs-comment">// // &#x5141;&#x8BB8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;&#x578B;&#x7684;&#x5F15;&#x7528;</span>
+<span class="hljs-comment">// department = new Department();  // &#x9519;&#x8BEF;&#xFF1A;&#x4E0D;&#x80FD;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;</span>
+department = <span class="hljs-keyword">new</span> AccountingDepartment();  <span class="hljs-comment">// &#x5141;&#x8BB8;&#x5BF9;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x5B50;&#x7C7B;&#x8FDB;&#x884C;&#x5B9E;&#x4F8B;&#x5316;&#x548C;&#x5F15;&#x7528;&#x8D4B;&#x503C;</span>
+department.printName();
+department.printMeeting();
+<span class="hljs-comment">// department.generateReport();  // &#x9519;&#x8BEF;: &#x65B9;&#x6CD5;&#x5728;&#x58F0;&#x660E;&#x7684;&#x62BD;&#x8C61;&#x7C7B;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;</span>
+</code></pre>
+</div></div></div></sec>
+<p>&#x5C31;&#x8FD0;&#x884C;&#x65F6;&#x800C;&#x8A00;&#xFF0C;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x6839;&#x672C;&#x4E0D;&#x5B58;&#x5728;&#x3002;&#x6BD5;&#x7ADF;&#x5B83;&#x4EEC;&#x6CA1;&#x6709;&#x88AB;&#x5B9E;&#x73B0;&#xFF0C;&#x4E5F;&#x65E0;&#x6CD5;&#x88AB;&#x8FD0;&#x884C;&#x3002;&#x8C03;&#x7528;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x5C31;&#x4E0E;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;    </p>
+<p>Dart&#x4E2D;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53EA;&#x5305;&#x542B;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x7684;&#x62BD;&#x8C61;&#x6765;&#x6765;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C06;&#x5728;&#x540E;&#x7EED;&#x5C55;&#x5F00;&#x8BA8;&#x8BBA;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x518D;&#x8BA8;&#x8BBA;&#x3002;   </p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="super-class.html" class="navigation navigation-prev " aria-label="Previous page: 父类">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../type/" class="navigation navigation-next " aria-label="Next page: 类型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"抽象类与抽象方法","level":"1.2.7","depth":2,"next":{"title":"类型","level":"1.3","depth":1,"path":"type/README.md","ref":"type/README.md","articles":[{"title":"可选类型","level":"1.3.1","depth":2,"path":"type/optional-type.md","ref":"type/optional-type.md","articles":[]},{"title":"函数类型","level":"1.3.2","depth":2,"path":"type/function-type.md","ref":"type/function-type.md","articles":[]},{"title":"接口类型","level":"1.3.3","depth":2,"path":"type/interface-type.md","ref":"type/interface-type.md","articles":[]}]},"previous":{"title":"父类","level":"1.2.6","depth":2,"path":"class/super-class.md","ref":"class/super-class.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","sectionx","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"discription":"","title":"","links":{},"gitbook":"*"},"file":{"path":"class/abstract.md","mtime":"2019-04-17T04:51:51.228Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-04-15T07:20:39.233Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
