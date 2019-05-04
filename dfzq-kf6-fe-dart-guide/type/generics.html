@@ -1,0 +1,949 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>泛型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="interface-type.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    教程简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro.html">
+            
+                <a href="../intro.html">
+            
+                    
+                    基础入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../class/">
+            
+                <a href="../class/">
+            
+                    
+                    类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../class/accessor.html">
+            
+                <a href="../class/accessor.html">
+            
+                    
+                    存取器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../class/instance-variable.html">
+            
+                <a href="../class/instance-variable.html">
+            
+                    
+                    实例变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../class/class-variable.html">
+            
+                <a href="../class/class-variable.html">
+            
+                    
+                    类变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../class/class-method.html">
+            
+                <a href="../class/class-method.html">
+            
+                    
+                    类方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../class/final-variable.html">
+            
+                <a href="../class/final-variable.html">
+            
+                    
+                    final变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../class/equal.html">
+            
+                <a href="../class/equal.html">
+            
+                    
+                    相等操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../class/super-class.html">
+            
+                <a href="../class/super-class.html">
+            
+                    
+                    父类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../class/abstract.html">
+            
+                <a href="../class/abstract.html">
+            
+                    
+                    抽象类与抽象方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../class/interface.html">
+            
+                <a href="../class/interface.html">
+            
+                    
+                    接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../class/constructor.html">
+            
+                <a href="../class/constructor.html">
+            
+                    
+                    构造函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../class/redirect-constructor.html">
+            
+                <a href="../class/redirect-constructor.html">
+            
+                    
+                    重定向构造函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../class/factory-constructor.html">
+            
+                <a href="../class/factory-constructor.html">
+            
+                    
+                    工厂构造函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../class/singleon-constructor.html">
+            
+                <a href="../class/singleon-constructor.html">
+            
+                    
+                    单例构造函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../class/const-constructor.html">
+            
+                <a href="../class/const-constructor.html">
+            
+                    
+                    常量构造函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../class/mixins.html">
+            
+                <a href="../class/mixins.html">
+            
+                    
+                    Mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../library/">
+            
+                <a href="../library/">
+            
+                    
+                    库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../library/top-layer.html">
+            
+                <a href="../library/top-layer.html">
+            
+                    
+                    顶层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../library/private.html">
+            
+                <a href="../library/private.html">
+            
+                    
+                    私有
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../library/import.html">
+            
+                <a href="../library/import.html">
+            
+                    
+                    导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../library/part.html">
+            
+                <a href="../library/part.html">
+            
+                    
+                    库的拆分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../library/export.html">
+            
+                <a href="../library/export.html">
+            
+                    
+                    导出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../library/defferred.html">
+            
+                <a href="../library/defferred.html">
+            
+                    
+                    延迟加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../function/">
+            
+                <a href="../function/">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../function/params.html">
+            
+                <a href="../function/params.html">
+            
+                    
+                    参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../function/body.html">
+            
+                <a href="../function/body.html">
+            
+                    
+                    函数体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../function/declaration.html">
+            
+                <a href="../function/declaration.html">
+            
+                    
+                    函数声明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../function/closure.html">
+            
+                <a href="../function/closure.html">
+            
+                    
+                    闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../function/call.html">
+            
+                <a href="../function/call.html">
+            
+                    
+                    函数调用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../function/function-class.html">
+            
+                <a href="../function/function-class.html">
+            
+                    
+                    Function类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../function/generator.html">
+            
+                <a href="../function/generator.html">
+            
+                    
+                    生成器函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="optional-type.html">
+            
+                <a href="optional-type.html">
+            
+                    
+                    可选类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="function-type.html">
+            
+                <a href="function-type.html">
+            
+                    
+                    函数类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="interface-type.html">
+            
+                <a href="interface-type.html">
+            
+                    
+                    接口类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.4" data-path="generics.html">
+            
+                <a href="generics.html">
+            
+                    
+                    泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >泛型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6CDB;&#x578B;">&#x6CDB;&#x578B;</h1>
+<p>&#x5728;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x3001;&#x63A5;&#x53E3;&#x6216;&#x7C7B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x9884;&#x5148;&#x6307;&#x5B9A;&#x5177;&#x4F53;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x518D;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x6027;&#x3002;       </p>
+<p>&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x4EC5;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x81F4;&#x7684;&#x5B9A;&#x4E49;&#x826F;&#x597D;&#x7684;API&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x8981;&#x8003;&#x8651;&#x53EF;&#x91CD;&#x7528;&#x6027;&#x3002; &#x7EC4;&#x4EF6;&#x4E0D;&#x4EC5;&#x80FD;&#x591F;&#x652F;&#x6301;&#x5F53;&#x524D;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x80FD;&#x652F;&#x6301;&#x672A;&#x6765;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x5728;&#x521B;&#x5EFA;&#x5927;&#x578B;&#x7CFB;&#x7EDF;&#x65F6;&#x4E3A;&#x4F60;&#x63D0;&#x4F9B;&#x4E86;&#x5341;&#x5206;&#x7075;&#x6D3B;&#x7684;&#x529F;&#x80FD;&#x3002;     </p>
+<p>&#x5728;&#x50CF;C#&#x548C;Java&#x8FD9;&#x6837;&#x7684;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>&#x6CDB;&#x578B;</code>&#x6765;&#x521B;&#x5EFA;&#x53EF;&#x91CD;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x3002; &#x8FD9;&#x6837;&#x7528;&#x6237;&#x5C31;&#x53EF;&#x4EE5;&#x4EE5;&#x81EA;&#x5DF1;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6765;&#x4F7F;&#x7528;&#x7EC4;&#x4EF6;&#x3002;     </p>
+<h4 id="&#x6CDB;&#x578B;&#x4E4B;hello-world">&#x6CDB;&#x578B;&#x4E4B;Hello World</h4>
+<p>&#x4E0B;&#x9762;&#x6765;&#x521B;&#x5EFA;&#x7B2C;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;echo&#x51FD;&#x6570;&#x3002; &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4F1A;&#x8FD4;&#x56DE;&#x4EFB;&#x4F55;&#x4F20;&#x5165;&#x5B83;&#x7684;&#x503C;&#x3002;       </p>
+<p>&#x4E0D;&#x7528;&#x6CDB;&#x578B;&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x80FD;&#x662F;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#xFF1A;              </p>
+<sec data-title="Dart" data-id="section1" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section1"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section1"><div class="panel-body">
+<pre><code class="lang-dart"><span class="hljs-built_in">int</span> echoInt(<span class="hljs-built_in">int</span> arg) {
+  <span class="hljs-keyword">return</span> arg;
+}
+
+echo(arg) {
+  <span class="hljs-keyword">return</span> arg;
+}
+
+main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">String</span>&gt; args) {
+  <span class="hljs-comment">// &#x53EA;&#x80FD;&#x6253;&#x5370;&#x6574;&#x6570;&#x578B;</span>
+  <span class="hljs-built_in">print</span>(echoInt(<span class="hljs-number">123</span>));
+
+  <span class="hljs-comment">// &#x53EF;&#x6253;&#x5370;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;</span>
+  <span class="hljs-built_in">print</span>(echo(<span class="hljs-string">&apos;123&apos;</span>));
+}
+</code></pre>
+</div></div></div></sec>
+<sec data-title="TypeScript" data-id="section2" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section2"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section2"><div class="panel-body">
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">echoInt</span>(<span class="hljs-params">arg: number</span>): <span class="hljs-title">number</span> </span>{
+  <span class="hljs-keyword">return</span> arg
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">echo</span>(<span class="hljs-params">arg: any</span>): <span class="hljs-title">any</span> </span>{
+  <span class="hljs-keyword">return</span> arg
+}
+
+<span class="hljs-comment">// &#x53EA;&#x80FD;&#x6253;&#x5370;&#x6574;&#x6570;&#x578B;</span>
+<span class="hljs-built_in">console</span>.log(echoInt(<span class="hljs-number">123</span>))
+
+<span class="hljs-comment">// &#x53EF;&#x6253;&#x5370;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;</span>
+<span class="hljs-built_in">console</span>.log(echo(<span class="hljs-string">&apos;123&apos;</span>))
+</code></pre>
+</div></div></div></sec>
+<p>&#x4F7F;&#x7528;<code>dynamic</code>&#x7C7B;&#x578B;&#x4F1A;&#x5BFC;&#x81F4;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;arg&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E22;&#x5931;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;&#xFF1A;&#x4F20;&#x5165;&#x7684;&#x7C7B;&#x578B;&#x4E0E;&#x8FD4;&#x56DE;&#x7684;&#x7C7B;&#x578B;&#x5E94;&#x8BE5;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x77E5;&#x9053;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x90FD;&#x6709;&#x53EF;&#x80FD;&#x88AB;&#x8FD4;&#x56DE;&#x3002;     </p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x4F7F;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x4E0E;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002; &#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;<code>&#x7C7B;&#x578B;&#x53D8;&#x91CF;</code>&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x53EA;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x7C7B;&#x578B;&#x800C;&#x4E0D;&#x662F;&#x503C;&#x3002;         </p>
+<sec data-title="Dart" data-id="section3" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section3"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section3"><div class="panel-body">
+<pre><code class="lang-dart">T echo&lt;T&gt;(T arg) {
+  <span class="hljs-keyword">return</span> arg;
+}
+</code></pre>
+</div></div></div></sec>
+<sec data-title="TypeScript" data-id="section4" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section4"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section4"><div class="panel-body">
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">echo</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">arg: T</span>): <span class="hljs-title">T</span> </span>{
+  <span class="hljs-keyword">return</span> arg
+}
+</code></pre>
+</div></div></div></sec>
+<p>&#x6211;&#x4EEC;&#x7ED9;echo&#x6DFB;&#x52A0;&#x4E86;&#x7C7B;&#x578B;&#x53D8;&#x91CF;T&#x3002; T&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x6355;&#x83B7;&#x7528;&#x6237;&#x4F20;&#x5165;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x6BD4;&#x5982;&#xFF1A;int&#xFF09;&#xFF0C;&#x4E4B;&#x540E;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x3002; &#x4E4B;&#x540E;&#x6211;&#x4EEC;&#x518D;&#x6B21;&#x4F7F;&#x7528;&#x4E86; T&#x5F53;&#x505A;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x3002;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E0E;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x662F;&#x76F8;&#x540C;&#x7684;&#x4E86;&#x3002; &#x8FD9;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x8DDF;&#x8E2A;&#x51FD;&#x6570;&#x91CC;&#x4F7F;&#x7528;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x4FE1;&#x606F;&#x3002;      </p>
+<p>&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x7684;echo&#x51FD;&#x6570;&#x53EB;&#x505A;&#x6CDB;&#x578B;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x53EF;&#x4EE5;&#x9002;&#x7528;&#x4E8E;&#x591A;&#x4E2A;&#x7C7B;&#x578B;&#x3002; &#x4E0D;&#x540C;&#x4E8E;&#x4F7F;&#x7528; dynamic&#xFF0C;&#x5B83;&#x4E0D;&#x4F1A;&#x4E22;&#x5931;&#x4FE1;&#x606F;&#xFF0C;&#x50CF;&#x7B2C;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x90A3;&#x50CF;&#x4FDD;&#x6301;&#x51C6;&#x786E;&#x6027;&#xFF0C;&#x4F20;&#x5165;&#x6570;&#x503C;&#x7C7B;&#x578B;&#x5E76;&#x8FD4;&#x56DE;&#x6570;&#x503C;&#x7C7B;&#x578B;&#x3002;        </p>
+<p>&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x6CDB;&#x578B;&#x51FD;&#x6570;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x3002; &#x7B2C;&#x4E00;&#x79CD;&#x662F;&#xFF0C;&#x4F20;&#x5165;&#x6240;&#x6709;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5305;&#x542B;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#xFF1A;       </p>
+<pre><code class="lang-dart">echo&lt;<span class="hljs-built_in">String</span>&gt;(<span class="hljs-string">&apos;123&apos;</span>)
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x660E;&#x786E;&#x7684;&#x6307;&#x5B9A;&#x4E86;T&#x662F;String&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x505A;&#x4E3A;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x7ED9;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&lt;&gt;&#x62EC;&#x8D77;&#x6765;&#x800C;&#x4E0D;&#x662F;()&#x3002;    </p>
+<p>&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#x66F4;&#x666E;&#x904D;&#x3002;&#x5229;&#x7528;&#x4E86;&#x7C7B;&#x578B;&#x63A8;&#x8BBA; -- &#x5373;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x81EA;&#x52A8;&#x5730;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x786E;&#x5B9A;T&#x7684;&#x7C7B;&#x578B;&#xFF1A;       </p>
+<pre><code class="lang-dart">echo(<span class="hljs-string">&apos;123&apos;</span>)
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x6211;&#x4EEC;&#x6CA1;&#x5FC5;&#x8981;&#x4F7F;&#x7528;&#x5C16;&#x62EC;&#x53F7;&#xFF08;&lt;&gt;&#xFF09;&#x6765;&#x660E;&#x786E;&#x5730;&#x4F20;&#x5165;&#x7C7B;&#x578B;&#xFF1B;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x67E5;&#x770B;arg&#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x628A;T&#x8BBE;&#x7F6E;&#x4E3A;&#x5B83;&#x7684;&#x7C7B;&#x578B;&#x3002; &#x7C7B;&#x578B;&#x63A8;&#x8BBA;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x4FDD;&#x6301;&#x4EE3;&#x7801;&#x7CBE;&#x7B80;&#x548C;&#x9AD8;&#x53EF;&#x8BFB;&#x6027;&#x3002;&#x5982;&#x679C;&#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x80FD;&#x591F;&#x81EA;&#x52A8;&#x5730;&#x63A8;&#x65AD;&#x51FA;&#x7C7B;&#x578B;&#x7684;&#x8BDD;&#xFF0C;&#x53EA;&#x80FD;&#x50CF;&#x4E0A;&#x9762;&#x90A3;&#x6837;&#x660E;&#x786E;&#x7684;&#x4F20;&#x5165;T&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5728;&#x4E00;&#x4E9B;&#x590D;&#x6742;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x662F;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x3002;         </p>
+<h4 id="&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x53D8;&#x91CF;">&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x53D8;&#x91CF;</h4>
+<p>&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x521B;&#x5EFA;&#x50CF;echo&#x8FD9;&#x6837;&#x7684;&#x6CDB;&#x578B;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x8981;&#x6C42;&#x4F60;&#x5728;&#x51FD;&#x6570;&#x4F53;&#x5FC5;&#x987B;&#x6B63;&#x786E;&#x7684;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x7C7B;&#x578B;&#x3002; &#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x628A;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x5F53;&#x505A;&#x662F;&#x4EFB;&#x610F;&#x6216;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x3002;      </p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x540C;&#x65F6;&#x6253;&#x5370;&#x51FA;arg&#x7684;&#x957F;&#x5EA6;&#x3002; &#x6211;&#x4EEC;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x8FD9;&#x6837;&#x505A;&#xFF1A;       </p>
+<pre><code class="lang-dart">T echo&lt;T&gt;(T arg) {
+  <span class="hljs-built_in">print</span>(arg.length);  <span class="hljs-comment">// The getter &apos;length&apos; isn&apos;t defined for the class &apos;Object&apos;.</span>
+  <span class="hljs-keyword">return</span> arg;
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x8FD9;&#x4E48;&#x505A;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x62A5;&#x9519;&#x8BF4;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;arg&#x7684;.length&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x5730;&#x65B9;&#x6307;&#x660E;arg&#x5177;&#x6709;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x3002; &#x8BB0;&#x4F4F;&#xFF0C;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x4EE3;&#x8868;&#x7684;&#x662F;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x4EBA;&#x53EF;&#x80FD;&#x4F20;&#x5165;&#x7684;&#x662F;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x800C;&#x6570;&#x5B57;&#x662F;&#x6CA1;&#x6709; .length&#x5C5E;&#x6027;&#x7684;&#x3002;        </p>
+<p>&#x73B0;&#x5728;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x60F3;&#x64CD;&#x4F5C;T&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;&#x800C;&#x4E0D;&#x76F4;&#x63A5;&#x662F;T&#x3002;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x64CD;&#x4F5C;&#x7684;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;.length&#x5C5E;&#x6027;&#x662F;&#x5E94;&#x8BE5;&#x5B58;&#x5728;&#x7684;&#x3002; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x50CF;&#x521B;&#x5EFA;&#x5176;&#x5B83;&#x6570;&#x7EC4;&#x4E00;&#x6837;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x6570;&#x7EC4;&#xFF1A;         </p>
+<sec data-title="Dart" data-id="section5" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section5"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section5"><div class="panel-body">
+<pre><code class="lang-dart"><span class="hljs-built_in">List</span>&lt;T&gt; loggingIdentity&lt;T&gt;(<span class="hljs-built_in">List</span>&lt;T&gt; arg) {
+  <span class="hljs-built_in">print</span>(arg.length);
+  <span class="hljs-keyword">return</span> arg;
+}
+
+main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">String</span>&gt; args) {
+  <span class="hljs-built_in">List</span> lists = [];
+  lists..add(<span class="hljs-number">1</span>)..add(<span class="hljs-string">&apos;2&apos;</span>);
+  loggingIdentity(lists); <span class="hljs-comment">// 2</span>
+}
+</code></pre>
+</div></div></div></sec>
+<sec data-title="TypeScript" data-id="section6" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section6"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section6"><div class="panel-body">
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loggingIdentity</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">arg: Array&lt;T&gt;</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  <span class="hljs-built_in">console</span>.log(arg.length)
+  <span class="hljs-keyword">return</span> arg
+}
+
+<span class="hljs-keyword">const</span> lists = []
+lists.push(<span class="hljs-number">1</span>)
+lists.push(<span class="hljs-string">&apos;2&apos;</span>)
+loggingIdentity(lists)  <span class="hljs-comment">// 2</span>
+</code></pre>
+</div></div></div></sec>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7406;&#x89E3;loggingIdentity&#x7684;&#x7C7B;&#x578B;&#xFF1A;&#x6CDB;&#x578B;&#x51FD;&#x6570;loggingIdentity&#xFF0C;&#x63A5;&#x6536;&#x7C7B;&#x578B;&#x53C2;&#x6570;T&#x548C;&#x53C2;&#x6570;arg&#xFF0C;&#x5B83;&#x662F;&#x4E2A;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x662F;T&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x662F;T&#x7684;&#x6570;&#x7EC4;&#x3002; &#x5982;&#x679C;&#x6211;&#x4EEC;&#x4F20;&#x5165;&#x6570;&#x5B57;&#x6570;&#x7EC4;&#xFF0C;&#x5C06;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x6570;&#x7EC4;&#x3002;      </p>
+<h4 id="&#x6CDB;&#x578B;&#x7C7B;">&#x6CDB;&#x578B;&#x7C7B;</h4>
+<p>&#x6CDB;&#x578B;&#x7C7B;&#x4F7F;&#x7528;&#xFF08; &lt;&gt;&#xFF09;&#x62EC;&#x8D77;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#xFF0C;&#x8DDF;&#x5728;&#x7C7B;&#x540D;&#x540E;&#x9762;&#x3002;     </p>
+<sec data-title="Dart" data-id="section7" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section7"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section7"><div class="panel-body">
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GenericNumber</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  T zeroValue;
+  <span class="hljs-built_in">Function</span> add; <span class="hljs-comment">// dart&#x7684;&#x7F3A;&#x70B9;&#x4E4B;&#x4E00;&#xFF0C;&#x65E0;&#x6CD5;&#x5BF9;Function&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x7EA6;&#x675F;</span>
+}
+
+main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">String</span>&gt; args) {
+  <span class="hljs-keyword">var</span> myGenericNumber = <span class="hljs-keyword">new</span> GenericNumber&lt;<span class="hljs-built_in">int</span>&gt;();
+  myGenericNumber.zeroValue = <span class="hljs-number">0</span>;
+  myGenericNumber.add = (<span class="hljs-built_in">int</span> x, <span class="hljs-built_in">int</span> y) =&gt; x + y;
+  <span class="hljs-built_in">print</span>(myGenericNumber.add(myGenericNumber.zeroValue, <span class="hljs-number">3</span>)); <span class="hljs-comment">// 3</span>
+}
+</code></pre>
+</div></div></div></sec>
+<sec data-title="TypeScript" data-id="section8" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section8"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section8"><div class="panel-body">
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GenericNumber</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  zeroValue: T
+  add: (x: T, y: T) =&gt; T
+}
+
+<span class="hljs-keyword">var</span> myGenericNumber = <span class="hljs-keyword">new</span> GenericNumber&lt;number&gt;();
+myGenericNumber.zeroValue = <span class="hljs-number">0</span>
+myGenericNumber.add = (x: number, y: number) =&gt; x + y
+<span class="hljs-built_in">console</span>.log(myGenericNumber.add(myGenericNumber.zeroValue, <span class="hljs-number">3</span>))  <span class="hljs-comment">// 3</span>
+</code></pre>
+</div></div></div></sec>
+<p>GenericNumber&#x7C7B;&#x7684;&#x4F7F;&#x7528;&#x662F;&#x5341;&#x5206;&#x76F4;&#x89C2;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x4F60;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x6CE8;&#x610F;&#x5230;&#x4E86;&#xFF0C;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x53BB;&#x9650;&#x5236;&#x5B83;&#x53EA;&#x80FD;&#x4F7F;&#x7528;int&#x7C7B;&#x578B;&#x3002; &#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5176;&#x5B83;&#x66F4;&#x590D;&#x6742;&#x7684;&#x7C7B;&#x578B;&#x3002;         </p>
+<sec data-title="Dart" data-id="section9" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section9"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section9"><div class="panel-body">
+<pre><code class="lang-dart">main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">String</span>&gt; args) {
+  <span class="hljs-keyword">var</span> stringNumeric = <span class="hljs-keyword">new</span> GenericNumber&lt;<span class="hljs-built_in">String</span>&gt;();
+  stringNumeric.zeroValue = <span class="hljs-string">&apos;0&apos;</span>;
+  stringNumeric.add = (<span class="hljs-built_in">String</span> x, <span class="hljs-built_in">String</span> y) =&gt; x + y;
+  <span class="hljs-built_in">print</span>(stringNumeric.add(stringNumeric.zeroValue, <span class="hljs-string">&apos;3&apos;</span>)); <span class="hljs-comment">// 03</span>
+}
+</code></pre>
+</div></div></div></sec>
+<sec data-title="TypeScript" data-id="section10" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section10"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section10"><div class="panel-body">
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> stringNumeric = <span class="hljs-keyword">new</span> GenericNumber&lt;<span class="hljs-built_in">String</span>&gt;();
+stringNumeric.zeroValue = <span class="hljs-string">&apos;0&apos;</span>
+stringNumeric.add = (x: <span class="hljs-built_in">String</span>, y: <span class="hljs-built_in">String</span>) =&gt; <span class="hljs-string">`<span class="hljs-subst">${x}</span><span class="hljs-subst">${y}</span>`</span>
+<span class="hljs-built_in">console</span>.log(stringNumeric.add(stringNumeric.zeroValue, <span class="hljs-string">&apos;3&apos;</span>))  <span class="hljs-comment">// 03</span>
+</code></pre>
+</div></div></div></sec>
+<p>&#x6CE8;&#xFF1A;&#x7C7B;&#x6709;&#x4E24;&#x90E8;&#x5206;&#xFF1A;&#x9759;&#x6001;&#x90E8;&#x5206;&#x548C;&#x5B9E;&#x4F8B;&#x90E8;&#x5206;&#x3002; &#x6CDB;&#x578B;&#x7C7B;&#x6307;&#x7684;&#x662F;&#x5B9E;&#x4F8B;&#x90E8;&#x5206;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x7C7B;&#x7684;&#x9759;&#x6001;&#x5C5E;&#x6027;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x3002;        </p>
+<h4 id="&#x6CDB;&#x578B;&#x7EA6;&#x675F;">&#x6CDB;&#x578B;&#x7EA6;&#x675F;</h4>
+<p>&#x4F60;&#x5E94;&#x8BE5;&#x4F1A;&#x8BB0;&#x5F97;&#x4E4B;&#x524D;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x65F6;&#x5019;&#x60F3;&#x64CD;&#x4F5C;&#x67D0;&#x7C7B;&#x578B;&#x7684;&#x4E00;&#x7EC4;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x8FD9;&#x7EC4;&#x503C;&#x5177;&#x6709;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5C5E;&#x6027;&#x3002; &#x5728; loggingIdentity&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8BBF;&#x95EE;arg&#x7684;length&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x662F;&#x7F16;&#x8BD1;&#x5668;&#x5E76;&#x4E0D;&#x80FD;&#x8BC1;&#x660E;&#x6BCF;&#x79CD;&#x7C7B;&#x578B;&#x90FD;&#x6709;length&#x5C5E;&#x6027;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x62A5;&#x9519;&#x4E86;&#x3002;       </p>
+<p>&#x76F8;&#x6BD4;&#x4E8E;&#x64CD;&#x4F5C;dynamic&#x6240;&#x6709;&#x7C7B;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x9650;&#x5236;&#x51FD;&#x6570;&#x53BB;&#x5904;&#x7406;&#x4EFB;&#x610F;&#x5E26;&#x6709;.length&#x5C5E;&#x6027;&#x7684;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x3002; &#x53EA;&#x8981;&#x4F20;&#x5165;&#x7684;&#x7C7B;&#x578B;&#x6709;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5141;&#x8BB8;&#xFF0C;&#x5C31;&#x662F;&#x8BF4;&#x81F3;&#x5C11;&#x5305;&#x542B;&#x8FD9;&#x4E00;&#x5C5E;&#x6027;&#x3002; &#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5217;&#x51FA;&#x5BF9;&#x4E8E;T&#x7684;&#x7EA6;&#x675F;&#x8981;&#x6C42;&#x3002;         </p>
+<p>&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x6765;&#x63CF;&#x8FF0;&#x7EA6;&#x675F;&#x6761;&#x4EF6;&#x3002; &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;&#x542B; .length&#x5C5E;&#x6027;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x548C;extends&#x5173;&#x952E;&#x5B57;&#x6765;&#x5B9E;&#x73B0;&#x7EA6;&#x675F;&#xFF1A;      </p>
+<sec data-title="Dart" data-id="section11" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section11"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section11"><div class="panel-body">
+<pre><code class="lang-dart"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Lengthwise</span> </span>{
+  <span class="hljs-built_in">int</span> length;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LengthwiseObj</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Lengthwise</span> </span>{}
+
+T loggingIdentityExtend&lt;T <span class="hljs-keyword">extends</span> Lengthwise&gt;(T arg) {
+  <span class="hljs-built_in">print</span>(arg.length);
+  <span class="hljs-keyword">return</span> arg;
+}
+
+main() {
+  loggingIdentityExtend(<span class="hljs-keyword">new</span> LengthwiseObj()..length = <span class="hljs-number">5</span>); <span class="hljs-comment">// 5</span>
+}
+</code></pre>
+</div></div></div></sec>
+<sec data-title="TypeScript" data-id="section12" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section12"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section12"><div class="panel-body">
+<pre><code class="lang-javascript">abstract <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Lengthwise</span> </span>{
+  length: number;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LengthwiseObj</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Lengthwise</span> </span>{}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loggingIdentityExtend</span>&lt;<span class="hljs-title">T</span> <span class="hljs-title">extends</span> <span class="hljs-title">Lengthwise</span>&gt;(<span class="hljs-params">arg: T</span>): <span class="hljs-title">T</span> </span>{
+  <span class="hljs-built_in">console</span>.log(arg.length)
+  <span class="hljs-keyword">return</span> arg
+}
+
+<span class="hljs-keyword">const</span> lengthwiseObj = <span class="hljs-keyword">new</span> LengthwiseObj()
+lengthwiseObj.length = <span class="hljs-number">5</span>
+loggingIdentityExtend(lengthwiseObj)  <span class="hljs-comment">// 5</span>
+<span class="hljs-comment">// TS&#x540C;&#x65F6;&#x8FD8;&#x652F;&#x6301;&#x5B57;&#x9762;&#x91CF;&#x76F8;&#x4F3C;&#x89C4;&#x5219;</span>
+loggingIdentityExtend({length: <span class="hljs-number">5</span>, value: <span class="hljs-number">3</span>})  <span class="hljs-comment">// 5</span>
+loggingIdentityExtend(<span class="hljs-string">&quot;12345&quot;</span>)  <span class="hljs-comment">// 5</span>
+loggingIdentityExtend([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>])  <span class="hljs-comment">// 5</span>
+</code></pre>
+</div></div></div></sec>
+<p>&#x73B0;&#x5728;&#x8FD9;&#x4E2A;&#x6CDB;&#x578B;&#x51FD;&#x6570;&#x88AB;&#x5B9A;&#x4E49;&#x4E86;&#x7EA6;&#x675F;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4E0D;&#x518D;&#x662F;&#x9002;&#x7528;&#x4E8E;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x3002;     </p>
+<blockquote>
+<p>&#x5728;Dart&#x4E2D;&#xFF0C;extends&#x8BC6;&#x522B;&#x7C7B;&#x578B;&#xFF1B;&#x5728;TS&#x4E2D;&#xFF0C;extends&#x5219;&#x8BC6;&#x522B;&#x5B57;&#x9762;&#x91CF;&#xFF0C;&#x5373;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F20;&#x5165;&#x7B26;&#x5408;&#x7EA6;&#x675F;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF0C;&#x5FC5;&#x987B;&#x5305;&#x542B;&#x5FC5;&#x987B;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x4ECE;&#x8FD9;&#x70B9;&#x8BBE;&#x8BA1;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;TS&#x7684;&#x601D;&#x60F3;&#x66F4;&#x52A0;&#x5148;&#x8FDB;&#x70B9;&#x3002;   </p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="interface-type.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 接口类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"泛型","level":"1.6.4","depth":2,"previous":{"title":"接口类型","level":"1.6.3","depth":2,"path":"type/interface-type.md","ref":"type/interface-type.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","sectionx","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"discription":"","title":"","links":{},"gitbook":"*"},"file":{"path":"type/generics.md","mtime":"2019-05-04T07:28:45.198Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-05-04T07:38:06.778Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
