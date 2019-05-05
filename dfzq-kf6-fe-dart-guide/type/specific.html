@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>形参类型 · GitBook</title>
+        <title>类型具体化 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -69,10 +69,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="interface-type.html" />
     
-    
-    <link rel="prev" href="optional-type.html" />
+    <link rel="prev" href="generics.html" />
     
 
     </head>
@@ -575,7 +573,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.2" data-path="parameter-type.html">
+        <li class="chapter " data-level="1.6.2" data-path="parameter-type.html">
             
                 <a href="parameter-type.html">
             
@@ -627,7 +625,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="specific.html">
+        <li class="chapter active" data-level="1.6.6" data-path="specific.html">
             
                 <a href="specific.html">
             
@@ -675,7 +673,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >形参类型</a>
+        <a href=".." >类型具体化</a>
     </h1>
 </div>
 
@@ -690,64 +688,79 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5F62;&#x53C2;&#x7C7B;&#x578B;">&#x5F62;&#x53C2;&#x7C7B;&#x578B;</h1>
-<p>Dart&#x7684;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x4E0E;&#x7C7B;&#x578B;&#x5173;&#x8054;&#xFF0C;&#x7C7B;&#x578B;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x793A;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;   </p>
-<sec data-title="Dart" data-id="section0" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section0"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section0"><div class="panel-body">
-<pre><code class="lang-dart"><span class="hljs-built_in">int</span> sum(<span class="hljs-built_in">int</span> a, <span class="hljs-built_in">int</span> b) =&gt; a + b;
-main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">String</span>&gt; args) {
-  <span class="hljs-built_in">print</span>(sum(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)); <span class="hljs-comment">// 7</span>
+                                <h1 id="&#x7C7B;&#x578B;&#x5177;&#x4F53;&#x5316;">&#x7C7B;&#x578B;&#x5177;&#x4F53;&#x5316;</h1>
+<p>&#x6BCF;&#x4E2A;&#x7C7B;&#x578B;&#x58F0;&#x660E;&#x90FD;&#x4F1A;&#x5F15;&#x5165;&#x4E00;&#x4E2A;&#x4EE3;&#x8868;&#x5B83;&#x81EA;&#x8EAB;&#x7684;&#x7C7B;&#x578B;&#x4E3A;Type&#x7684;&#x7F16;&#x8BD1;&#x65F6;&#x5E38;&#x91CF;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x4E5F;&#x662F;&#x53EF;&#x89C1;&#x7684;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x901A;&#x8FC7;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x548C;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E5F;&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x4E3A;&#x67D0;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x6210;&#x5458;&#x3002;      </p>
+<h3 id="&#x7C7B;&#x578B;&#x68C0;&#x67E5;">&#x7C7B;&#x578B;&#x68C0;&#x67E5;</h3>
+<p>&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x662F;&#x7528;&#x6765;&#x6D4B;&#x8BD5;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5C5E;&#x4E8E;&#x67D0;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF1A;    </p>
+<sec data-title="Dart" data-id="section1" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section1"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section1"><div class="panel-body">
+<pre><code class="lang-dart">main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">String</span>&gt; args) {
+  <span class="hljs-keyword">var</span> v = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+  <span class="hljs-built_in">print</span>(v <span class="hljs-keyword">is</span> <span class="hljs-built_in">List</span>); <span class="hljs-comment">// true</span>
+  <span class="hljs-built_in">print</span>(v <span class="hljs-keyword">is</span> <span class="hljs-built_in">Map</span>);  <span class="hljs-comment">// false</span>
+  <span class="hljs-built_in">print</span>(v <span class="hljs-keyword">is</span> <span class="hljs-built_in">Object</span>); <span class="hljs-comment">// true</span>
 }
 </code></pre>
 </div></div></div></sec>
-<sec data-title="TypeScript" data-id="section1" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section1"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section1"><div class="panel-body">
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> sum = (a: number, b: number): number =&gt; a + b;
-<span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)) <span class="hljs-comment">// 7</span>
+<sec data-title="TypeScript" data-id="section2" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section2"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section2"><div class="panel-body">
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> isList = (props: any): props is [] =&gt; <span class="hljs-keyword">typeof</span> (props <span class="hljs-keyword">as</span> [])[<span class="hljs-string">&apos;concat&apos;</span>] !== <span class="hljs-string">&apos;undefined&apos;</span>
+<span class="hljs-keyword">const</span> mapInstance = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()
+<span class="hljs-keyword">const</span> objectInstance = {}
+
+<span class="hljs-keyword">var</span> v = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+<span class="hljs-built_in">console</span>.log(isList(v))  <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(isList(mapInstance))  <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(isList(objectInstance))  <span class="hljs-comment">// false</span>
 </code></pre>
 </div></div></div></sec>
-<p>&#x5F53;&#x7136;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x6765;&#x4E66;&#x5199;&#x4EE3;&#x7801;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x6BB5;&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x7F3A;&#x5C11;&#x7C7B;&#x578B;&#x6CE8;&#x89E3;&#xFF1A;</p>
-<sec data-title="Dart" data-id="section2" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section2"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section2"><div class="panel-body">
-<pre><code class="lang-dart">sum(<span class="hljs-built_in">int</span> a, <span class="hljs-built_in">int</span> b) =&gt; a + b;
-main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">String</span>&gt; args) {
-  <span class="hljs-built_in">print</span>(sum(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)); <span class="hljs-comment">// 7</span>
+<p>&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x7684;&#x4E00;&#x822C;&#x5F62;&#x5F0F;&#x662F;e is T&#xFF0C;&#x5176;&#x4E2D;e&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x800C;T&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x3002;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x4F1A;&#x5BF9;e&#x6C42;&#x503C;&#x5E76;&#x5C06;&#x7ED3;&#x679C;&#x7684;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x4E0E;&#x7C7B;&#x578B;T&#x505A;&#x5BF9;&#x6BD4;&#x6D4B;&#x8BD5;&#x3002;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x7684;&#x6700;&#x540E;&#x4E00;&#x884C;&#x662F;&#x6C38;&#x8FDC;&#x4E0D;&#x80FD;&#x51FA;&#x73B0;&#x5728;Dart&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#xFF0C;&#x5B83;&#x7684;&#x503C;&#x59CB;&#x7EC8;&#x662F;true&#xFF0C;&#x56E0;&#x4E3A;Dart&#x4E2D;&#x6240;&#x6709;&#x7684;&#x503C;&#x90FD;&#x662F;&#x5BF9;&#x8C61;&#x3002;     </p>
+<h3 id="&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;">&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</h3>
+<p>&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x540C;&#x6837;&#x662F;&#x5BF9;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x6C42;&#x503C;&#x5E76;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x5C5E;&#x4E8E;&#x67D0;&#x4E2A;&#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x7ED3;&#x679C;&#x5E76;&#x4E0D;&#x660E;&#x786E;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4F1A;&#x629B;&#x51FA;&#x4E00;&#x4E2A;CastError&#xFF0C;&#x5426;&#x5219;&#x5B83;&#x5C06;&#x8FD4;&#x56DE;&#x672A;&#x6539;&#x52A8;&#x7684;&#x88AB;&#x68C0;&#x67E5;&#x7684;&#x5BF9;&#x8C61;&#x3002;      </p>
+<sec data-title="Dart" data-id="section3" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section3"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section3"><div class="panel-body">
+<pre><code class="lang-dart">main() {
+  <span class="hljs-built_in">Object</span> o = [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+  <span class="hljs-built_in">print</span>(o <span class="hljs-keyword">as</span> <span class="hljs-built_in">List</span>); <span class="hljs-comment">// [3, 4, 5]</span>
+  <span class="hljs-built_in">print</span>(o <span class="hljs-keyword">as</span> <span class="hljs-built_in">Map</span>);  <span class="hljs-comment">// Unhandled exception</span>
 }
 </code></pre>
 </div></div></div></sec>
-<sec data-title="TypeScript" data-id="section3" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section3"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section3"><div class="panel-body">
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> sum = (a: number, b: number) =&gt; a + b;
-<span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)) <span class="hljs-comment">// 7</span>
-</code></pre>
-</div></div></div></sec>  
-<p>&#x8FD9;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x7684;&#x884C;&#x4E3A;&#x662F;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x9605;&#x8BFB;&#x4EE3;&#x7801;&#x7684;&#x4EBA;&#x80FD;&#x591F;&#x53D7;&#x76CA;&#x4E8E;&#x7C7B;&#x578B;&#x6CE8;&#x89E3;&#x63D0;&#x4F9B;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x4F46;Dart&#x8FD0;&#x884C;&#x65F6;&#x5BF9;&#x6B64;&#x5E76;&#x4E0D;&#x5173;&#x5FC3;&#x3002;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5229;&#x7528;&#x7C7B;&#x578B;&#x6CE8;&#x89E3;&#xFF1A;&#x4ED6;&#x4EEC;&#x53EF;&#x4EE5;&#x5BF9;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x7684;&#x7C7B;&#x578B;&#x4E0D;&#x4E00;&#x81F4;&#x53D1;&#x51FA;&#x8B66;&#x544A;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x591A;&#x79CD;&#x65B9;&#x5F0F;&#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x3002;&#x4F46;&#x662F;&#x4EC5;&#x4EC5;&#x4F9D;&#x9760;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x5C31;&#x80FD;&#x591F;&#x786E;&#x4FDD;&#x7A0B;&#x5E8F;&#x7684;&#x51C6;&#x786E;&#x6027;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#xFF0C;&#x54EA;&#x6015;&#x5728;&#x975E;&#x5E38;&#x4E25;&#x683C;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x7684;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x8BED;&#x8A00;&#x4E2D;&#x540C;&#x6837;&#x5B58;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x95EE;&#x9898;&#xFF1A;   </p>
-<sec data-title="Dart" data-id="section4" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section4"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section4"><div class="panel-body">
-<pre><code class="lang-dart"><span class="hljs-built_in">int</span> i;
-<span class="hljs-built_in">int</span> j = <span class="hljs-number">0</span>;
-sum(a, b) =&gt; a + b;
-main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">String</span>&gt; args) {
-  <span class="hljs-built_in">print</span>(sum(i, j)); <span class="hljs-comment">// NoSuchMethodError: The method &apos;+&apos; was called on null.</span>
-}
+<sec data-title="TypeScript" data-id="section4" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section4"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section4"><div class="panel-body">
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x5728;ts&#x4E2D;&#x4E5F;&#x53EB;&#x7C7B;&#x578B;&#x65AD;&#x8A00;&#xFF0C;&#x6709;2&#x79CD;&#x8BED;&#x6CD5;&#x5199;&#x6CD5;</span>
+<span class="hljs-comment">// &#x5199;&#x6CD5;1&#xFF1A;</span>
+<span class="hljs-keyword">let</span> o = [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-built_in">console</span>.log(&lt;Array&lt;number&gt;&gt;o) // [3, 4, 5]
+console.log(&lt;Map&lt;number, number&gt;&gt;o) // &#x7F16;&#x8BD1;&#x65F6;&#x901A;&#x4E0D;&#x8FC7;
+// &#x5199;&#x6CD5;2&#xFF0C;&#x5373;dart&#x7684;&#x5199;&#x6CD5;&#xFF1A;
+console.log(o as Array&lt;number&gt;) // [3, 4, 5]
+console.log(o as Map&lt;number, number&gt;) // &#x7F16;&#x8BD1;&#x65F6;&#x901A;&#x4E0D;&#x8FC7;
 </code></pre>
 </div></div></div></sec>
-<sec data-title="TypeScript" data-id="section5" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section5"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section5"><div class="panel-body">
-<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> i: number
-<span class="hljs-keyword">let</span> j: number = <span class="hljs-number">0</span>
-<span class="hljs-keyword">const</span> sum = (a, b) =&gt; a + b
-<span class="hljs-built_in">console</span>.log(sum(i, j))  <span class="hljs-comment">// NaN</span>
+<p>&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5927;&#x81F4;&#x4E0A;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x7684;&#x7B80;&#x5199;&#xFF1A;      </p>
+<pre><code class="lang-dart"><span class="hljs-keyword">var</span> t = e;
+e <span class="hljs-keyword">is</span> T ? t : <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> CastError();
 </code></pre>
-</div></div></div></sec> 
-<p>&#x4E0A;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4E0D;&#x80FD;&#x8FD0;&#x884C;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x6709;&#x6B63;&#x786E;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x5F53;&#x7136;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x975E;&#x5E38;&#x7684;&#x666E;&#x904D;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4EC5;&#x4EC5;&#x4F9D;&#x9760;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x5C31;&#x80FD;&#x591F;&#x786E;&#x4FDD;&#x7A0B;&#x5E8F;&#x7684;&#x6B63;&#x786E;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x5C06;&#x62E5;&#x6709;&#x5DE8;&#x5927;&#x7684;&#x7ECF;&#x6D4E;&#x4F18;&#x52BF;&#x3002;&#x867D;&#x7136;sum()&#x6CA1;&#x6709;&#x88AB;&#x7C7B;&#x578B;&#x6240;&#x6CE8;&#x89E3;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x67D0;&#x4E9B;&#x5B9A;&#x4E49;&#x4E86;+&#x65B9;&#x6CD5;&#x7684;&#x7C7B;&#x578B;&#x5374;&#x662F;&#x6709;&#x610F;&#x4E49;&#x7684;&#xFF1A;   </p>
-<sec data-title="Dart" data-id="section6" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="dart">Dart<a class="pull-right section atTitle btn btn-default" target="section6"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section6"><div class="panel-body">
-<pre><code class="lang-dart">sum(a, b) =&gt; a + b;
-main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">String</span>&gt; args) {
-  <span class="hljs-built_in">print</span>(sum(<span class="hljs-string">&apos;abc&apos;</span>, <span class="hljs-string">&apos;defg&apos;</span>)); <span class="hljs-comment">// abcdefg</span>
+<p>&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x7684;&#x5178;&#x578B;&#x7528;&#x6CD5;&#x662F;&#x6570;&#x636E;&#x68C0;&#x67E5;&#x3002;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x4E5F;&#x4E0D;&#x5E94;&#x8BE5;&#x6EE5;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x6267;&#x884C;&#x7684;&#xFF08;TS&#x5219;&#x4E0D;&#x662F;&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x4F1A;&#x5E26;&#x6765;&#x4E00;&#x5B9A;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x6D88;&#x8017;&#x3002;          </p>
+<pre><code class="lang-dart"><span class="hljs-built_in">Object</span> o = [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>];
+<span class="hljs-comment">// ......&#x5927;&#x91CF;&#x7684;&#x4E2D;&#x95F4;&#x903B;&#x8F91;</span>
+(o <span class="hljs-keyword">as</span> <span class="hljs-built_in">List</span>).length; <span class="hljs-comment">// &#x8FD9;&#x4F1A;&#x5B58;&#x5728;&#x4E00;&#x5B9A;&#x7684;&#x6027;&#x80FD;&#x635F;&#x8017;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x76EE;&#x7684;&#x53EA;&#x662F;&#x8BA9;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x5668;&#x53EF;&#x4EE5;&#x4E0D;&#x53D1;&#x51FA;&#x8B66;&#x544A;&#x6216;&#x62A5;&#x9519;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x5373;&#x53EF;&#xFF1A;       </p>
+<pre><code class="lang-dart"><span class="hljs-built_in">Object</span> o = [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>];
+<span class="hljs-comment">// ......&#x5927;&#x91CF;&#x7684;&#x4E2D;&#x95F4;&#x903B;&#x8F91;</span>
+<span class="hljs-built_in">List</span> o_as_list = o;
+o_as_list.length; <span class="hljs-comment">// &#x8FD9;&#x6837;&#x662F;&#x6700;&#x4F18;&#x5904;&#x7406;&#xFF0C;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x9690;&#x5F0F;&#x7684;&#x88C5;&#x7BB1;&#x64CD;&#x4F5C;&#xFF0C;&#x6027;&#x80FD;&#x66F4;&#x4F18;</span>
+</code></pre>
+<h3 id="&#x88C5;&#x7BB1;&#x62C6;&#x7BB1;">&#x88C5;&#x7BB1;&#x62C6;&#x7BB1;</h3>
+<p>&#x5728;&#x6BCF;&#x6B21;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x4E2D;&#xFF0C;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4EE5;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;Dart&#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x3002;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x8D4B;&#x7ED9;&#x53D8;&#x91CF;&#x7684;&#x52A8;&#x6001;&#x503C;&#x662F;&#x53D8;&#x91CF;&#x7684;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x7684;&#x6210;&#x5458;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x5B9E;&#x9645;&#x53C2;&#x6570;&#x7684;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x4E5F;&#x4F1A;&#x4E0E;&#x5F62;&#x5F0F;&#x53C2;&#x6570;&#x7684;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#x68C0;&#x67E5;&#xFF0C;&#x800C;&#x51FD;&#x6570;&#x7ED3;&#x679C;&#x7684;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x5219;&#x4F1A;&#x4E0E;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#x68C0;&#x67E5;&#x3002;      </p>
+<pre><code class="lang-dart">main() {
+  <span class="hljs-built_in">num</span> n = <span class="hljs-number">3.0</span>;
+  <span class="hljs-comment">// int i = n;  // &#x62A5;&#x9519;</span>
+  <span class="hljs-built_in">double</span> i = n;
+  <span class="hljs-built_in">num</span> x = i;
+  <span class="hljs-built_in">int</span> j = <span class="hljs-keyword">null</span>;
 }
 </code></pre>
-</div></div></div></sec>
-<sec data-title="TypeScript" data-id="section7" data-show="true" data-collapse="false"><div class="panel panel-default"><div class="panel-heading"><h2 id="typescript">TypeScript<a class="pull-right section atTitle btn btn-default" target="section7"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section7"><div class="panel-body">
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> sum = (a, b) =&gt; a + b
-<span class="hljs-built_in">console</span>.log(sum(<span class="hljs-string">&apos;abc&apos;</span>, <span class="hljs-string">&apos;defg&apos;</span>)) <span class="hljs-comment">// abcdefg</span>
-</code></pre>
-</div></div></div></sec> 
-<p>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E3A;&#x4E86;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x8FC7;&#x5206;&#x7684;&#x7C7B;&#x578B;&#x8B66;&#x544A;&#xFF0C;&#x6700;&#x597D;&#x7684;&#x505A;&#x6CD5;&#x5C31;&#x662F;&#x5B8C;&#x5168;&#x907F;&#x514D;&#x7ED9;sum()&#x6DFB;&#x52A0;&#x7C7B;&#x578B;&#x6CE8;&#x89E3;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;&#x4E2D;&#x7684;&#x503C;&#x7684;&#x771F;&#x5B9E;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x662F;&#x53D8;&#x91CF;&#x7684;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x6216;&#x8005;&#x662F;null&#x3002;&#x5373;&#x4E0A;&#x9762;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;i&#x7684;&#x771F;&#x5B9E;&#x7C7B;&#x578B;double&#x662F;x&#x7684;&#x9759;&#x6001;&#x7C7B;&#x578B;num&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x56E0;&#x6B64;&#x6210;&#x7ACB;&#x3002;&#x540C;&#x6837;&#x793A;&#x4F8B;&#x4E5F;&#x5C55;&#x793A;&#x4E86;null&#x53EF;&#x4EE5;&#x8D4B;&#x503C;&#x7ED9;j&#x3002;         </p>
+<p>&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E0D;&#x4EC5;&#x7E41;&#x7410;&#xFF0C;&#x8FD8;&#x4F1A;&#x5F15;&#x5165;&#x8FD0;&#x884C;&#x65F6;&#x5F00;&#x9500;&#xFF0C;&#x5728;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E0B;&#x5168;&#x9762;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x7684;&#x4EE3;&#x4EF7;&#x662F;&#x5F88;&#x9AD8;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x6709;&#x771F;&#x6B63;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x624D;&#x53BB;&#x5408;&#x7406;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;        </p>
 
                                 
                                 </section>
@@ -775,14 +788,10 @@ main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">Stri
 
             
                 
-                <a href="optional-type.html" class="navigation navigation-prev " aria-label="Previous page: 可选类型">
+                <a href="generics.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 泛型">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="interface-type.html" class="navigation navigation-next " aria-label="Next page: 接口类型">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -791,7 +800,7 @@ main(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">Stri
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"形参类型","level":"1.6.2","depth":2,"next":{"title":"接口类型","level":"1.6.3","depth":2,"path":"type/interface-type.md","ref":"type/interface-type.md","articles":[]},"previous":{"title":"可选类型","level":"1.6.1","depth":2,"path":"type/optional-type.md","ref":"type/optional-type.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","sectionx","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"discription":"","title":"","links":{},"gitbook":"*"},"file":{"path":"type/parameter-type.md","mtime":"2019-05-05T01:53:07.647Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-05-05T08:58:10.789Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"类型具体化","level":"1.6.6","depth":2,"previous":{"title":"泛型","level":"1.6.5","depth":2,"path":"type/generics.md","ref":"type/generics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","sectionx","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"discription":"","title":"","links":{},"gitbook":"*"},"file":{"path":"type/specific.md","mtime":"2019-05-05T08:53:42.607Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-05-05T08:58:10.789Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
