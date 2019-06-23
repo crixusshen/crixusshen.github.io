@@ -183,17 +183,24 @@ var init = function init(bridge) {
  * @param callback
  */
 var ready = function ready(callback) {
+  var __cb___ = function __cb___(__bridge___) {
+    (0, _log.log)('ready end');
+    callback(__bridge___);
+  };
+
   if (isFromApp) {
     if (ipad || iphone || ipod) {
-      (0, _log.log)('ready async');
       // 新版本兼容IOS
       if (window.WebViewJavascriptBridge) {
-        return callback(WebViewJavascriptBridge);
+        (0, _log.log)('ready sync start');
+        return __cb___(WebViewJavascriptBridge);
       }
+      (0, _log.log)('ready async start(push)');
       if (window.WVJBCallbacks) {
-        return window.WVJBCallbacks.push(callback);
+        return window.WVJBCallbacks.push(__cb___);
       }
-      window.WVJBCallbacks = [callback];
+      (0, _log.log)('ready async start(iframe)');
+      window.WVJBCallbacks = [__cb___];
       var WVJBIframe = document.createElement('iframe');
       WVJBIframe.style.display = 'none';
       WVJBIframe.src = 'https://__bridge_loaded__';
@@ -204,22 +211,22 @@ var ready = function ready(callback) {
     } else if (android) {
       // 旧版本兼容Android
       if (window.WebViewJavascriptBridge) {
-        (0, _log.log)('ready sync');
-        callback(init(WebViewJavascriptBridge));
+        (0, _log.log)('ready sync start');
+        __cb___(init(WebViewJavascriptBridge));
       } else {
+        (0, _log.log)('ready async start');
         document.addEventListener('WebViewJavascriptBridgeReady', function () {
-          (0, _log.log)('ready async');
           // 以异步形式加载
-          callback(init(WebViewJavascriptBridge));
+          __cb___(init(WebViewJavascriptBridge));
         }, false);
       }
     } else {
-      (0, _log.log)('other platform ready sync');
-      callback();
+      (0, _log.log)('other platform ready sync start');
+      __cb___();
     }
   } else {
-    (0, _log.log)('non app ready sync');
-    callback();
+    (0, _log.log)('non app ready sync start');
+    __cb___();
   }
 };
 
@@ -590,8 +597,8 @@ Object.defineProperty(exports, "__esModule", {
  * Created by dfzq on 2019/6/22.
  */
 var log = function log(str) {
-  var d = new Date();
-  console.log(d.toLocaleTimeString() + ' ' + d.getMilliseconds() + ":" + str);
+  var _d = new Date();
+  console.log(_d.toLocaleTimeString() + ' ' + _d.getMilliseconds() + ":" + str);
 };
 
 exports.log = log;
@@ -789,7 +796,6 @@ var oauth = function oauth(options) {
       if (WebViewJavascriptBridge) {
         (0, _log.log)("oauth start");
         WebViewJavascriptBridge.callHandler('refreshToken', {}, function (response) {
-          (0, _log.log)("oauth end");
           if (typeof response == 'string') {
             response = JSON.parse(response);
           }
@@ -817,6 +823,7 @@ var oauth = function oauth(options) {
             }
 
           isRegisterOk = false;
+          (0, _log.log)("oauth end");
         });
       }
     }
