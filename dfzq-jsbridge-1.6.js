@@ -708,7 +708,7 @@ exports._compareVersion = _compareVersion;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.onLoginEnhance = exports.onViewWillAppear = exports.onWxPay = exports.onNavigateBar = exports.onNavigateNativeTo = exports.onReq = exports.onNavigateBack = exports.onNavigateTo = exports.onShare = exports.onLogin = exports.oauth = exports.ready = exports.isFromWeiXin = exports.isFromApp = undefined;
+exports.onLoginEnhance = exports.onViewWillAppear = exports.onWxPay = exports.onNavigateBar = exports.onNavigateNativeTo = exports.onReq = exports.onNavigateBack = exports.onNavigateTo = exports.onShare = exports.onLogin = exports.oauth = exports.ready = exports.isFromAndroid = exports.isFromIOS = exports.isFromWeiXin = exports.isFromApp = undefined;
 
 var _util = __webpack_require__(0);
 
@@ -727,7 +727,7 @@ var _log = __webpack_require__(2);
  * v1.3 : 修复IOS缩略图尺寸过大(小于32kb)导致无法微博分享的bug
  * v1.4 : 增加微信支付、视图出现回调函数
  * v1.5 : 增加onLoginEnhance 登录加强版 支持资金账号登录
- * v1.6 : 增加开发者模式
+ * v1.6 : 增加开发者模式，同时增加isFromIOS和isFromAndroid指令
  */
 var isRegisterOk = false;
 
@@ -760,6 +760,16 @@ var isFromApp = function isFromApp() {
 // 是否来自于微信
 var isFromWeiXin = function isFromWeiXin() {
   return !!navigator.userAgent.toLowerCase().match(/MicroMessenger/i);
+};
+
+// 是否来自于iOS
+var isFromIOS = function isFromIOS() {
+  return !!(ipad || iphone || ipod);
+};
+
+// 是否来自于Android
+var isFromAndroid = function isFromAndroid() {
+  return !!android;
 };
 
 /**
@@ -1117,6 +1127,8 @@ var onViewWillAppear = function onViewWillAppear(callback) {
 
 exports.isFromApp = isFromApp;
 exports.isFromWeiXin = isFromWeiXin;
+exports.isFromIOS = isFromIOS;
+exports.isFromAndroid = isFromAndroid;
 exports.ready = ready;
 exports.oauth = oauth;
 exports.onLogin = onLogin;
