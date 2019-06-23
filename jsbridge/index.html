@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="weui-footer">
-                  <p class="weui-footer__text">授信更新时间 {this.state.queryTime}</p>
+                  <p class="weui-footer__text">授信更新时间 <span id="queryTime"></span></p>
                 </div>
                 <div class="weui-btn-area">
                     <a id="btn1" class="weui-btn weui-btn_primary" href="javascript:">oauth授信</a>
@@ -158,11 +158,29 @@
 <script src="http://itest.dfzq.com.cn/open/tools.js?env=1"></script>
 <script src="http://itest.dfzq.com.cn/open/dfzq-jsbridge-1.5.js"></script>
 <script>
+   const log = str => {
+     var d = new Date()
+     console.log(d.toLocaleTimeString() + ' ' + d.getMilliseconds() + ":" + str)
+   }
+
     /**
      * 初始化桥接程序
      */
     fastman.ready(function () {
-        // 所有的桥接接口都必须在ready接口执行成功后才可被调用，如果需要在页面加载时就调用相关桥接接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+      // 所有的桥接接口都必须在ready接口执行成功后才可被调用，如果需要在页面加载时就调用相关桥接接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+      fastman.oauth({
+        success: function (res) {
+          $('#token').val(res.token)
+          $('#vtDeviceId').val(res.vtDeviceId)
+          $('#queryTime').text(new Date().toLocaleTimeString() + ' ' + new Date().getMilliseconds())
+        },
+        fail: function (err) {
+          log('oauth failure:' + JSON.stringify(err))
+          $.dialog({
+            text: 'oauth failure:' + JSON.stringify(err),
+          })
+        }
+      })
     })
 
     // 是否来自于APP
@@ -196,8 +214,10 @@
                 success: function (res) {
                     $('#token').val(res.token)
                     $('#vtDeviceId').val(res.vtDeviceId)
+                    $('#queryTime').text(new Date().toLocaleTimeString() + ' ' + new Date().getMilliseconds())
                 },
                 fail: function (err) {
+                    log('oauth failure:' + JSON.stringify(err))
                     $.dialog({
                         text: 'oauth failure:' + JSON.stringify(err),
                     })
