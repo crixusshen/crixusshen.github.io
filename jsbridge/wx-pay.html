@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信支付</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="./weui.min.css">
+    <style>
+        .page__hd {
+            padding: 40px;
+        }
+        .page__title {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="container">
+    <div class="page input js_show">
+
+        <!-- 当前所切换的环境区域 -->
+        <div class="page__hd">
+            <h1 class="page__title">当前环境:<span id="currentEnv"></span></h1>
+        </div>
+
+        <!-- 商品区域 -->
+        <div id="productListPanel" class="page__bd">
+            <span style="width: 120px; display: block; margin: 0 auto; color: #888;">数据加载中 ...</span>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="./jquery.min.js"></script>
+<!-- env开启本地调试模式：0-开启；1-关闭，不走代理； -->
+<script src="http://itest.dfzq.com.cn/open/tools.js?env=1"></script>
+<script src="http://itest.dfzq.com.cn/open/wxPay.js"></script>
+<script src="http://itest.dfzq.com.cn/open/dfzq-jsbridge-1.4.js"></script>
+<script>
+    /**
+     * 调用微信支付桥接指令
+     * @param payParams 调用微信支付必要的参数
+     */
+    function wxPay(payParams) {
+        fastman.onWxPay({
+            appId: payParams.appId,
+            partnerId: payParams.partnerId,
+            prePayId: payParams.prePayId,
+            noncestr: payParams.noncestr,
+            timestamp: payParams.timestamp,
+            package: payParams.package,
+            sign: payParams.sign,
+            success: function (response) {
+                if (response.errCode == '0') {
+                    $.dialog({
+                        text: '支付成功',
+                    })
+                }
+                else if (response.errCode == '-1') {
+                    $.dialog({
+                        text: '支付失败',
+                    })
+                }
+                else if (response.errCode == '-2') {
+                    $.dialog({
+                        text: '支付取消',
+                    })
+                }
+            },
+        })
+    }
+</script>
+</html>

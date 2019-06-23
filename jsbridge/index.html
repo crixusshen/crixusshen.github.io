@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局Window调用桥接程序</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link href="https://cdn.bootcss.com/weui/2.0.0/style/weui.min.css" rel="stylesheet">
+</head>
+<body ontouchstart>
+    <div class="container" id="container">
+        <div class="page input js_show">
+            <div class="page__bd">
+                <div class="weui-cells__title">注册桥接并授权</div>
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label">token</label></div>
+                        <div class="weui-cell__bd">
+                            <input id="token" class="weui-input" type="text">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label">vtDeviceId</label></div>
+                        <div class="weui-cell__bd">
+                            <input id="vtDeviceId" class="weui-input" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-footer">
+                  <p class="weui-footer__text">授信更新时间 {this.state.queryTime}</p>
+                </div>
+                <div class="weui-btn-area">
+                    <a id="btn1" class="weui-btn weui-btn_primary" href="javascript:">oauth授信</a>
+                </div>
+            </div>
+
+
+            <div class="page__bd">
+                <div class="weui-cells__title">登录</div>
+                <div class="weui-btn-area">
+                    <a id="btn2" class="weui-btn weui-btn_primary" href="javascript:">唤起登录</a>
+                </div>
+                <div class="weui-cells weui-cells_checkbox">
+                  <label class="weui-cell weui-check__label" for="s11">
+                    <div class="weui-cell__hd">
+                      <input type="checkbox" class="weui-check" name="checkbox1" id="s11" checked="checked">
+                      <i class="weui-icon-checked"></i>
+                    </div>
+                    <div class="weui-cell__bd">
+                      <p>普通资金账号</p>
+                    </div>
+                  </label>
+                  <label class="weui-cell weui-check__label" for="s12">
+                    <div class="weui-cell__hd">
+                      <input type="checkbox" name="checkbox1" class="weui-check" id="s12">
+                      <i class="weui-icon-checked"></i>
+                    </div>
+                    <div class="weui-cell__bd">
+                      <p>两融账号</p>
+                    </div>
+                  </label>
+                  <label class="weui-cell weui-check__label" for="s13">
+                    <div class="weui-cell__hd">
+                      <input type="checkbox" name="checkbox1" class="weui-check" id="s13">
+                      <i class="weui-icon-checked"></i>
+                    </div>
+                    <div class="weui-cell__bd">
+                      <p>期权账号</p>
+                    </div>
+                  </label>
+                </div>
+                <div class="weui-btn-area">
+                    <a id="btn14" class="weui-btn weui-btn_primary" href="javascript:">唤起加强版登录</a>
+                </div>
+            </div>
+
+
+            <div class="page__bd">
+                <div class="weui-cells__title">分享</div>
+                <div class="weui-btn-area">
+                    <a id="btn3" class="weui-btn weui-btn_primary" href="javascript:">微信朋友圈分享</a>
+                </div>
+                <div class="weui-btn-area">
+                    <a id="btn4" class="weui-btn weui-btn_primary" href="javascript:">微信好友分享</a>
+                </div>
+                <div class="weui-btn-area">
+                    <a id="btn5" class="weui-btn weui-btn_primary" href="javascript:">QQ好友分享</a>
+                </div>
+                <div class="weui-btn-area">
+                    <a id="btn6" class="weui-btn weui-btn_primary" href="javascript:">微博分享</a>
+                </div>
+            </div>
+
+
+            <div class="page__bd">
+                <div class="weui-cells__title">导航</div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">H5 URL</label></div>
+                    <div class="weui-cell__bd">
+                        <input id="url" class="weui-input" type="text" placeholder="请输入H5 URL" value="https://m.baidu.com/">
+                    </div>
+                    <div id="btnClearText" class="weui-cell__ft">
+                        <i class="weui-icon-clear"></i>
+                    </div>
+                </div>
+                <div class="weui-btn-area">
+                    <a id="btn7" class="weui-btn weui-btn_primary" href="javascript:">前进</a>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">原生 URL</label></div>
+                    <div class="weui-cell__bd">
+                        <input id="url2" class="weui-input" type="text" placeholder="请输入原生 URL" value="dfyj://dl/openaccount">
+                    </div>
+                    <div id="btnClearText2" class="weui-cell__ft">
+                        <i class="weui-icon-clear"></i>
+                    </div>
+                </div>
+                <div class="weui-btn-area">
+                    <a id="btn11" class="weui-btn weui-btn_primary" href="javascript:">前进</a>
+                </div>
+                <div class="weui-btn-area">
+                    <a id="btn8" class="weui-btn weui-btn_primary" href="javascript:">后退</a>
+                </div>
+            </div>
+
+
+            <div class="page__bd">
+                <div class="weui-cells__title">第三方调用</div>
+                <div class="weui-btn-area">
+                    <a id="btn9" class="weui-btn weui-btn_primary" href="javascript:">模拟成功调用</a>
+                </div>
+                <div class="weui-btn-area">
+                    <a id="btn10" class="weui-btn weui-btn_primary" href="javascript:">模拟失败调用</a>
+                </div>
+            </div>
+
+            <div class="page__bd">
+                <div class="weui-cells__title">设置导航头</div>
+                <div class="weui-btn-area">
+                    <a id="btn12" class="weui-btn weui-btn_primary" href="javascript:">设置</a>
+                </div>
+            </div>
+
+            <div class="page__bd">
+                <div class="weui-cells__title">微信支付</div>
+                <div class="weui-btn-area">
+                    <a id="btn13" class="weui-btn weui-btn_primary" href="javascript:">测试支付</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="weui-footer">
+          <p class="weui-footer__text">Copyright © 2019-2025 orientsec.ued</p>
+        </div>
+    </div>
+</body>
+<script src="./jquery.min.js"></script>
+<!-- env开启本地调试模式：0-开启；1-关闭，不走代理； -->
+<script src="http://itest.dfzq.com.cn/open/tools.js?env=1"></script>
+<script src="http://itest.dfzq.com.cn/open/dfzq-jsbridge-1.5.js"></script>
+<script>
+    /**
+     * 初始化桥接程序
+     */
+    fastman.ready(function () {
+        // 所有的桥接接口都必须在ready接口执行成功后才可被调用，如果需要在页面加载时就调用相关桥接接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+    })
+
+    // 是否来自于APP
+    var isFromApp = fastman.isFromApp()
+
+    // 存入localstorage中
+    if (window.localStorage) {
+        var storage = window.localStorage
+        if (storage['url']) {
+            $('#url').val(storage['url'])
+        }
+        if (storage['url2']) {
+            $('#url2').val(storage['url2'])
+        }
+    }
+
+    /**
+     * 执行oauth指令
+     * 获取设备编号及会话token
+     * 设备编号：每个移动设备都会产生对应的标识符，用于区分不同的移动设备
+     * 会话token：则是维持服务端服务之间的会话状态，以上2个参数在oauth指令成功回调可获取
+     */
+    $('#btn1').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            fastman.oauth({
+                success: function (res) {
+                    $('#token').val(res.token)
+                    $('#vtDeviceId').val(res.vtDeviceId)
+                },
+                fail: function (err) {
+                    $.dialog({
+                        text: 'oauth failure:' + JSON.stringify(err),
+                    })
+                }
+            })
+        }
+    })
+
+    /**
+     * 唤起登录
+     */
+    $('#btn2').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            fastman.onLogin()
+        }
+    })
+
+    /**
+     * [加强版登录]
+     * @return {[type]} [description]
+     */
+    $('#btn14').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            var fundList = [];
+            if($('#s11').prop("checked")){
+              fundList.push('3');
+            }
+            if($('#s12').prop("checked")){
+              fundList.push('6');
+            }
+            if($('#s13').prop("checked")){
+              fundList.push('18');
+            }
+            var payload = {
+              type:'1',
+            }
+            if(fundList.length > 0){
+              payload.fundtype = fundList.join(',');
+            }
+            payload.success = function(res) {
+              if(res.isLogin == true){
+                if(res.bizSysId == 3)
+                  $.dialog({
+                      text: '普通资金账号',
+                  })
+                else if(res.bizSysId == 6)
+                  $.dialog({
+                      text: '两融账号',
+                  })
+                else if(res.bizSysId == 18)
+                  $.dialog({
+                      text: '期权账号',
+                  })
+              }
+            }
+            fastman.onLoginEnhance(payload)
+
+        }
+    })
+
+    /**
+     * 微信朋友圈分享
+     */
+    $('#btn3').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            fastman.onShare({
+                channel : '2',
+                title : '东方赢家财富版上线啦',
+                description : '东方赢家财富版是一款综合类金融工具APP',
+                thumbImageUrl : 'http://wxs.dfzq.com.cn/fileRes/new_download/images/new_pic.jpg',
+                link : 'http://wxs.dfzq.com.cn/fileRes/new_download/app_open/appOpen.html',
+            })
+        }
+    })
+
+    /**
+     * 微信好友分享
+     */
+    $('#btn4').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            fastman.onShare({
+                channel : '1',
+                title : '东方赢家财富版上线啦',
+                description : '东方赢家财富版是一款综合类金融工具APP',
+                thumbImageUrl : 'http://wxs.dfzq.com.cn/fileRes/new_download/images/new_pic.jpg',
+                link : 'http://wxs.dfzq.com.cn/fileRes/new_download/app_open/appOpen.html',
+            })
+        }
+    })
+
+    /**
+     * QQ好友分享
+     */
+    $('#btn5').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            fastman.onShare({
+                channel : '4',
+                title : '东方赢家财富版上线啦',
+                description : '东方赢家财富版是一款综合类金融工具APP',
+                thumbImageUrl : 'http://wxs.dfzq.com.cn/fileRes/new_download/images/new_pic.jpg',
+                link : 'http://wxs.dfzq.com.cn/fileRes/new_download/app_open/appOpen.html',
+            })
+        }
+    })
+
+    /**
+     * 微博分享
+     */
+    $('#btn6').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            fastman.onShare({
+                channel : '3',
+                title : '东方赢家财富版上线啦',
+                description : '东方赢家财富版是一款综合类金融工具APP',
+                thumbImageUrl : 'http://wxs.dfzq.com.cn/fileRes/new_download/images/new_pic.jpg',
+                link : 'http://wxs.dfzq.com.cn/fileRes/new_download/app_open/appOpen.html',
+            })
+        }
+    })
+
+    /**
+     * 导航前进(H5)
+     */
+    $('#btn7').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            var url = $('#url').val()
+            if (url == null || url == ''){
+                $.dialog({
+                    text: '请填写正确的h5 url',
+                })
+            } else {
+                if (window.localStorage) {
+                    var storage = window.localStorage
+                    storage['url'] = url
+                }
+
+                fastman.onNavigateTo({
+                    title: '跳转地址标题',
+                    uri: url,
+                })
+            }
+        }
+    })
+    // 快速清除URL内的内容
+    $('#btnClearText').on('click', function () {
+        $('#url').val('')
+    })
+
+    /**
+     * 导航后退
+     */
+    $('#btn8').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            fastman.onNavigateBack({
+                success: function (resp) {
+                    alert('返回成功')
+                }
+            })
+        }
+    })
+
+
+    /**
+     * 第三方调用 - 模拟成功回调
+     */
+    $('#btn9').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            fastman.onReq('IF060002', {
+                days: '2',
+                success : function (resp) {
+                    $.dialog({
+                        text: JSON.stringify(resp),
+                    })
+                },
+                fail : function(err) {
+                    $.dialog({
+                        text: JSON.stringify(err.info + '(' + err.code + ')'),
+                    })
+                },
+            })
+        }
+    })
+
+
+    /**
+     * 第三方调用 - 模拟失败回调
+     */
+    $('#btn10').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            fastman.onReq('IF060002', {
+                days: fastman.isFromAndroid() ? 'aaa' : 2,               // 故意传错数据类型
+                success : function (resp) {
+                    $.dialog({
+                        text: JSON.stringify(resp),
+                    })
+                },
+                fail : function(err) {
+                    $.dialog({
+                        text: JSON.stringify(err.info + '(' + err.code + ')'),
+                    })
+                },
+            })
+        }
+    })
+
+    /**
+     * 导航前进(Native)
+     */
+    $('#btn11').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            var url = $('#url2').val()
+            if (url == null || url == ''){
+                $.dialog({
+                    text: '请填写正确的schema url',
+                })
+            } else {
+                if (window.localStorage) {
+                    var storage = window.localStorage
+                    storage['url2'] = url
+                }
+
+                fastman.onNavigateNativeTo({
+                    url: url,
+                })
+            }
+        }
+    })
+    // 快速清除URL内的内容
+    $('#btnClearText2').on('click', function () {
+        $('#url2').val('')
+    })
+
+    /**
+     * 设置导航头
+     */
+    $('#btn12').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            // 相关配置
+            fastman.onNavigateBar({
+                title: '我的标题',                   // 导航标题
+                rightButtonTitle: '点我',           // 右侧按钮文字
+                onRightButtonPress: function(){    // 右侧按钮点击事件，不定义则不会触发点击
+                    $.dialog({
+                        text: '右侧按钮被点击了',
+                    })
+                },
+                isShowBackButton: true,            // 是否显示后退按钮，默认true(即显示)
+            })
+        }
+    })
+
+    /**
+     * 微信支付
+     */
+    $('#btn13').on('click', function () {
+        if (!isFromApp) {
+            $.dialog({
+                text: '请在东方赢家财富版APP内打开',
+            })
+        }
+        else {
+            fastman.onNavigateTo({
+                title: '微信支付',
+                uri: 'wx-pay.html',
+            })
+        }
+    })
+
+</script>
+</html>
