@@ -128,7 +128,6 @@ obsoleteInterval = null;
 
   function onUpdateReady() {
     sendEvent('onUpdateReady');
-    console.log('onUpdateReady')
   }
 
   function onUpdateFailed() {
@@ -150,7 +149,6 @@ obsoleteInterval = null;
   window.__applyUpdate = function() {
     applicationCache.swapCache();
     sendEvent('onUpdated');
-    console.log('__applyUpdate')
   };
 </script>
 </html>
