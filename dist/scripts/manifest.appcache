@@ -1,22 +1,22 @@
 CACHE MANIFEST
-#ver:2019-7-25 14:38:51
+#ver:2019-7-25 14:44:41
 #plugin:5.0.7
 
 CACHE:
 ./framework-runtime.efc678124270fdefb038.js
-./application-common.a8af53fea9a2e5a2e9a6.js
-./fastman-sdk.ccf607b539b276601f54.js
-./fastman-api.34672784c3d8961f2a23.js
-./fastman.5193eb482e6e058b86a0.js
-./fastman-fileuploadman.1a2b092e0011beaa948d.js
-./fastman-passguardman.65253f68a3d93baedf53.js
-./fastman-preloadman.c3a5331d4ce42037f6ad.js
-./fastman-swiperman.9835f852a673e1c5a708.js
-./fastman-traceman.febdd8dba877adb4ddd8.js
-./fastman-ui-design.a181175cb02211bf61d8.js
-./main.bc5b87223e8bc2fb4339.js
-./oauthSimulation.debbc4724e814739d3c7.js
-./template.00cce07cf39375e31ea0.js
+./application-common.3337327792cb66fe7922.js
+./fastman-sdk.801303de8cd4751eb313.js
+./fastman-api.4a1eac498e30a10c9dc5.js
+./fastman.33232b7fdbf5cacb7c42.js
+./fastman-fileuploadman.a64564130aeccc505faa.js
+./fastman-passguardman.5cd4d226242d082e4daf.js
+./fastman-preloadman.6e712182feb0f438d06e.js
+./fastman-swiperman.ede1549b88f529e146af.js
+./fastman-traceman.c746f181476eb658987e.js
+./fastman-ui-design.d5100d279d3cc3c1da98.js
+./main.95f02ceb53164ba16ee5.js
+./oauthSimulation.6a58a9b7b7ae58040bd0.js
+./template.03ac52d48143971df2bf.js
 ./../oauth-simulation/index.html
 ./../demo-index/index.html
 ./../demo-template/index.html
