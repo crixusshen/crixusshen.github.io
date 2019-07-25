@@ -1,0 +1,25 @@
+CACHE MANIFEST
+#ver:2019-7-25 11:59:28
+#plugin:5.0.7
+
+CACHE:
+./framework-runtime.efc678124270fdefb038.js
+./application-common.a8af53fea9a2e5a2e9a6.js
+./fastman-sdk.ccf607b539b276601f54.js
+./fastman-api.34672784c3d8961f2a23.js
+./fastman.5193eb482e6e058b86a0.js
+./fastman-fileuploadman.1a2b092e0011beaa948d.js
+./fastman-passguardman.65253f68a3d93baedf53.js
+./fastman-preloadman.c3a5331d4ce42037f6ad.js
+./fastman-swiperman.9835f852a673e1c5a708.js
+./fastman-traceman.febdd8dba877adb4ddd8.js
+./fastman-ui-design.a181175cb02211bf61d8.js
+./main.b3f11775a864065d9d38.js
+./oauthSimulation.debbc4724e814739d3c7.js
+./template.00cce07cf39375e31ea0.js
+./../oauth-simulation/index.html
+./../demo-index/index.html
+./../demo-template/index.html
+
+NETWORK:
+*
