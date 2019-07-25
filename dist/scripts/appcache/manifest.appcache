@@ -1,10 +1,10 @@
 CACHE MANIFEST
-#ver:2019-7-24 19:03:00
+#ver:2019-7-25 11:01:45
 #plugin:5.0.7
 
 CACHE:
 ../scripts/framework-runtime.efc678124270fdefb038.js
-../scripts/application-common.7ff47d2823c234500b02.js
+../scripts/application-common.a1437f9128224937aa8c.js
 ../scripts/fastman-sdk.ccf607b539b276601f54.js
 ../scripts/fastman-api.34672784c3d8961f2a23.js
 ../scripts/fastman.5193eb482e6e058b86a0.js
@@ -17,9 +17,9 @@ CACHE:
 ../scripts/main.b3f11775a864065d9d38.js
 ../scripts/oauthSimulation.debbc4724e814739d3c7.js
 ../scripts/template.00cce07cf39375e31ea0.js
-../scripts/../oauth-simulation/
-../scripts/../demo-index/
-../scripts/../demo-template/
+../scripts/../oauth-simulation/index.html
+../scripts/../demo-index/index.html
+../scripts/../demo-template/index.html
 
 NETWORK:
 *
