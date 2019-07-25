@@ -127,18 +127,22 @@ obsoleteInterval = null;
   }
 
   function onUpdateReady() {
+    alert('onUpdateReady')
     sendEvent('onUpdateReady');
   }
 
   function onUpdateFailed() {
+    alert('onUpdateFailed')
     sendEvent('onUpdateFailed');
   }
 
   function onUninstalled() {
+    alert('onUninstalled')
     sendEvent('onUninstalled');
   }
 
   function onInstalled() {
+    alert('onInstalled')
     sendEvent('onInstalled');
   }
 
