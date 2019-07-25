@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2019-7-25 15:14:33
+#ver:2019-7-25 15:19:01
 #plugin:5.0.7
 
 CACHE:
@@ -14,7 +14,7 @@ CACHE:
 ./fastman-swiperman.ede1549b88f529e146af.js
 ./fastman-traceman.c746f181476eb658987e.js
 ./fastman-ui-design.d5100d279d3cc3c1da98.js
-./main.3b87f44518a68e70a7cd.js
+./main.060dce4926f9745c4044.js
 ./oauthSimulation.6a58a9b7b7ae58040bd0.js
 ./template.03ac52d48143971df2bf.js
 ./../oauth-simulation/index.html
