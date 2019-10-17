@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS-SDK For OrientSec.UED</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link href="https://cdn.bootcss.com/weui/2.0.0/style/weui.min.css" rel="stylesheet">
+</head>
+<body ontouchstart>
+    <div class="container" id="container">
+        <div class="page input js_show">
+            <div class="page__bd">
+                <div class="weui-btn-area">
+                    <a id="btn1" class="weui-btn weui-btn_block weui-btn_primary" href="javascript:">Window调用桥接程序</a>
+                </div>
+            </div>
+
+            <div class="page__bd">
+                <div class="weui-btn-area">
+                    <a id="btn2" class="weui-btn weui-btn_block weui-btn_primary" href="javascript:">React调用桥接程序</a>
+                </div>
+            </div>
+
+            <div class="page__bd">
+                <div class="weui-btn-area">
+                    <a id="btn3" class="weui-btn weui-btn_block weui-btn_primary" href="javascript:">Vue调用桥接程序</a>
+                </div>
+            </div>
+        </div>
+        <div class="weui-footer">
+          <p class="weui-footer__text">Copyright © 2019-2025 orientsec.ued</p>
+        </div>
+    </div>
+</body>
+<script src="./jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+<script>var vConsole = new VConsole();</script>
+<script src="http://itest.dfzq.com.cn/open/dfzq-jsbridge-1.6.js"></script>
+<script>
+    /**
+     * 初始化桥接程序
+     */
+    fastman.ready(function () {
+      // 所有的桥接接口都必须在ready接口执行成功后才可被调用，如果需要在页面加载时就调用相关桥接接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+    })
+
+    $('#btn1').on('click', function () {
+        fastman.onNavigateTo({
+          title: 'Window调用桥接程序',
+          uri: './window.html',
+        })
+    })
+
+    $('#btn2').on('click', function () {
+        fastman.onNavigateTo({
+          title: 'React调用桥接程序',
+          uri: './react-app/index.html',
+        })
+    })
+
+    $('#btn3').on('click', function () {
+        fastman.onNavigateTo({
+          title: 'Vue调用桥接程序',
+          uri: './vue-app/index.html',
+        })
+    })
+</script>
+</html>
